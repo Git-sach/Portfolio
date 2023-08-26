@@ -1,1 +1,149 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  font-family: 'KoHo', sans-serif;
+}
+
+:root {
+  --backgroundColor: #FAFAFA;
+  --mainColor1: #202429;
+  --mainColor1b: rgba(35, 37, 40, 0.85);
+  --mainColor2: #EAA92C;
+
+  --bubleSize: 10px;
+  --bubleBackgroundColor: var(--mainColor2);
+  --bubleBorderRadius: 100%;
+  --bubleBorder: 0.3px solid rgba(0, 0, 0, 0.5);
+  --bubleShadow: inset 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  color: var(--mainColor1);
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.titleSections {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.titleSections .titleFront {
+  font-size: 64px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.titleSections .titleBack {
+  font-size: 128px;
+  font-weight: 600;
+  color: var(--mainColor1);
+  opacity: 0.03;
+  line-height: 130px;
+  position: absolute;
+  bottom: 0px;
+  left: -5%;
+}
+
+
+body {
+  margin: 0;
+  background-color: var(--backgroundColor);
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 1vh;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #cbcbcb;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a7a7a7;
+}
+
+
+
+
+@media only screen and (max-width: 1024px){
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 15px;
+    margin-bottom: 57px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .titleSections {
+    margin-bottom: 37px;
+  }
+
+  .titleSections .titleFront {
+    font-size: 50px;
+  }
+
+  .titleSections .titleBack {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  h3 {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 11px;
+  }
+
+  .titleSections {
+    margin-bottom: 35px;
+  }
+
+  .titleSections .titleFront {
+    font-size: 40px;
+  }
+
+  .titleSections .titleBack {
+    font-size: 75px;
+    line-height: 75px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .titleSections {
+    margin-bottom: 15px;
+  }
+}

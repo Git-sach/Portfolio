@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="titleSections">
+    <h1 class="titleFront">{{title}}</h1>
+    <h1 appSlidingText class="titleBack">{{title}}</h1>
+  </div>
+  <h3>{{subTitle}}</h3>
+  <div class="portflioContainer">
+    <div class="content">
+      <div class="navigation">
+        <nav>
+          <ul>
+            <li
+              *ngFor="let project of projects; let index = index"
+              (click)="navClick(index)">{{project.title}}
+            </li>
+          </ul>
+        </nav>
+        <div class="barNav"></div>
+        <div class="selectedNav">
+          <div *ngFor="let project of projects"
+            class="selectedPoint"
+            #point>
+          </div>
+        </div>
+      </div>
+      <div class="detail"
+      [@content]="detailStateAnimation">
+        <div class="resum">
+          <h2>{{projects[selectedProject].title}}</h2>
+          <pre><p>{{projects[selectedProject].resum}}</p></pre>
+        </div>
+        <div *ngIf="isSmallScreen" class="images">
+          <img class="imgLeft"
+          src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
+          alt="Geoquizz"/>
+          <img class="imgBetween"
+          src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
+          alt="Geoquizz"/>
+          <img class="imgRight"
+          appSlidingImg [ratioX]=".005" [ratioY]="-.03"
+          src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
+          alt="Geoquizz"/>
+        </div>
+        <div class="specifications">
+          <div class="keyWords">
+            <div *ngFor="let keyword of projects[selectedProject].keyWords"
+              class="keyWord">{{keyword}}
+            </div>
+          </div>
+          <div class="sources">
+            <p>WEBSITE</p>
+            <p>CODE SOURCE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!isSmallScreen" class="images">
+      <img class="imgLeft"
+      appSlidingImg [ratioX]=".004" [ratioY]="-.02"
+      src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
+      alt="Geoquizz"/>
+      <img class="imgBetween"
+      appSlidingImg [ratioX]="-.001" [ratioY]=".01"
+      src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
+      alt="Geoquizz"/>
+      <img class="imgRight"
+      appSlidingImg [ratioX]=".006" [ratioY]="-.03"
+      src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
+      alt="Geoquizz"/>
+    </div>
+  </div>
+</div>
+
+<!-- Provisoir, pour preLoad les images -->
+<div *ngFor="let project of projects" style="display: none;">
+  <img
+  src="../../../assets/portfolio/{{project.images.imgLeft}}"
+  alt="Geoquizz"/>
+  <img class="imgBetween"
+  src="../../../assets/portfolio/{{project.images.imgBetween}}"
+  alt="Geoquizz"/>
+  <img class="imgRight"
+  src="../../../assets/portfolio/{{project.images.imgRight}}"
+  alt="Geoquizz"/>
+</div>

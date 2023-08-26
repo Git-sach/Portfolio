@@ -1,0 +1,211 @@
+.container {
+  margin-bottom: 1000px;
+}
+
+.portflioContainer {
+  display: flex;
+  width: 100%;
+  gap: 10%;
+}
+
+.portflioContainer .content {
+  width: 60%;
+}
+
+.portflioContainer .content .navigation {
+  margin-bottom: 20px;
+}
+
+.portflioContainer .content .navigation nav ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.portflioContainer .content .navigation nav ul li{
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.portflioContainer .content .navigation .barNav {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.portflioContainer .content .navigation .selectedNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portflioContainer .content .navigation .selectedNav .selectedPoint{
+  content: '';
+  margin: 0 5%;
+  transform: translate(0%, -50%);
+  width: var(--bubleSize);
+  height: var(--bubleSize);
+  background: var(--bubleBackgroundColor);
+  border-radius: var(--bubleBorderRadius);
+  border: var(--bubleBorder);
+  box-shadow: var(--bubleShadow);
+  transition: transform .3s ease-in-out;
+  opacity: 0;
+}
+
+.portflioContainer .content .navigation .selectedNav .selectedPoint:first-child{
+  opacity: 1;
+}
+
+.portflioContainer .content .detail {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portflioContainer .content .resum pre {
+  white-space: pre-line;
+}
+
+.specifications {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  align-items: end;
+}
+
+.specifications .keyWords {
+  margin-top: 40px;
+  display: flex;
+  gap: 8px;
+}
+
+.specifications .keyWord {
+  font-size: 11px;
+  background-color: var(--mainColor1b);
+  padding: 5px 15px;
+  color: white;
+  border-radius: 4px;
+}
+
+.specifications .sources p {
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+}
+
+.specifications .sources p::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--bubleBackgroundColor);
+  border-radius: var(--bubleBorderRadius);
+  border: var(--bubleBorder);
+  box-shadow: var(--bubleShadow);
+  top: 50%;
+  transform: translate(70%, -50%);
+}
+
+
+
+.portflioContainer .images {
+  width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portflioContainer .images img {
+  box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.30);
+}
+
+.portflioContainer .images .imgLeft {
+  width: 45%;
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  z-index: 1;
+}
+.portflioContainer .images .imgBetween {
+  width: 80%;
+  z-index: 0;
+}
+.portflioContainer .images .imgRight {
+  width: 40%;
+  position: absolute;
+  right: 0;
+  top: 15%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px){
+
+  .portflioContainer .content {
+    width: 100%;
+  }
+
+  .portflioContainer .content .navigation nav ul li{
+    font-size: 17px;
+  }
+
+  .portflioContainer .content .navigation .selectedNav .selectedPoint{
+    margin: 0 4%;
+  }
+
+  .portflioContainer .content .detail {
+    min-height: 200px;
+  }
+
+  .portflioContainer .content .resum pre {
+    padding-right: 20%;
+  }
+
+  .specifications .keyWord {
+    font-size: 7px;
+    padding: 4px 12px;
+  }
+
+  .specifications .keyWords {
+    margin-top: 20px;
+  }
+
+  .specifications .sources p {
+    font-size: 9px;
+  }
+
+  .specifications .sources p::after {
+    width: 4px;
+    height: 4px;
+  }
+
+  .portflioContainer .images {
+    width: 80%;
+    margin: auto;
+  }
+
+  .portflioContainer .images .imgBetween {
+    margin: 15% 0;
+  }
+
+}
+
+@media only screen and (max-width: 390px){
+
+  .portflioContainer .content .detail {
+    min-height: 225px;
+  }
+
+  .portflioContainer .content .resum pre {
+    padding-right: 0;
+  }
+
+  .portflioContainer .content .navigation .selectedNav .selectedPoint{
+    margin: 0 9%;
+  }
+
+}
