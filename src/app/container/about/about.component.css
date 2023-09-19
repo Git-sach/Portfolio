@@ -1,0 +1,18 @@
+.sectionContainer {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.aboutContainer {
+  max-width: 600px;
+}
+
+.aboutContainer h3 {
+  font-size: 17px;
+  line-height: 1.5rem;
+}
+
+pre {
+  white-space: pre-line;
+  text-align: justify;
+}

@@ -1,0 +1,52 @@
+.separatorContainer {
+    width: 100vw;
+    /* border: black solid 1px; */
+    display: flex;
+    align-items: end;
+    position: relative;
+    gap: 12vw;
+  }
+
+  .separatorContainer .leftSeparator{
+    height: 8px;
+    width: 50%;
+    /* border: red solid 1px; */
+    transform: skew(0deg, .8deg) translateY(3px);
+    background-color: var(--backgroundColor);
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
+    z-index: 1;
+  }
+
+  .separatorContainer .rightSeparator{
+    height: 8px;
+    width: 50%;
+    /* border: red solid 1px; */
+      transform: skew(0deg, -.8deg) translateY(3px);
+    background-color: var(--backgroundColor);
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
+    z-index: 1;
+  }
+
+  .separatorContainer .triangle {
+    height: 2vw;
+    width: 2vw;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: var(--backgroundColor) solid 20px;
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
+    border-right : 8vw solid transparent;
+    border-left : 8vw solid transparent;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .separatorContainer .mask {
+    height: 25px;
+    bottom: -7px;
+    background-color: var(--backgroundColor);
+    /* border: rgb(49, 145, 76) solid 1px; */
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+  }

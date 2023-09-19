@@ -1,66 +1,68 @@
-<div class="container">
-  <div class="titleSections">
-    <h1 class="titleFront">{{title}}</h1>
-    <h1 appSlidingText class="titleBack">{{title}}</h1>
-  </div>
-  <h3>{{subTitle}}</h3>
-  <div class="experiencesContainer">
-    <div class="experiences">
-      <div
-        (mouseover)="experienceHover(i)"
-        (mouseleave)="experienceHoverLeave(i)"
-        (click)="experienceClick(i)"
-        class="experience"
-        *ngFor="let experience of experiences; let i=index">
-        <div class="experienceContent">
-          <div class="title">
-            <h1 class="experienceTitle">{{experience.title}}</h1>
-            <img *ngIf="experience.companyLogo"
-              src="../../../assets/companyLogo/{{experience.companyLogo}}"
-              alt="logo Abylsen"/>
-            <div class="companyName">{{experience.companyName}}</div>
-          </div>
-          <div class="experienceDate">
-            <p class="date">{{experience.dateStart | date: 'dd MMMM YYYY'}}</p>
-            <p class="date">{{experience.dateEnd | date: 'dd MMMM YYYY'}}</p>
-            <p class="date">5 mois</p>
-          </div>
-          <p [@resum]="experience.style.isOpen ? 'displayed' : 'hidden'" class="experienceResum">{{experience.resum}}</p>
-          <div [@agile]="experience.style.isOpen ? 'displayed' : 'hidden'" *ngIf="experience.agile" class="agile">
-            <img src="../../../assets/logoAgile.svg"
-            alt="logo Agile"/>
-            <p>AGILE</p>
-          </div>
-          <div class="keyWords">
-            <div
-              [@keyWord]="experience.style.isOpen ? 'displayed' : 'hidden'"
-              *ngFor="let keyWord of experience.keyWords"
-              class="keyWord">{{keyWord}}
+<div class="sectionContainer">
+  <div class="container">
+    <div class="titleSections">
+      <h1 class="titleFront">{{title}}</h1>
+      <h1 appSlidingText class="titleBack">{{title}}</h1>
+    </div>
+    <h3>{{subTitle}}</h3>
+    <div class="experiencesContainer">
+      <div class="experiences">
+        <div
+          (mouseover)="experienceHover(i)"
+          (mouseleave)="experienceHoverLeave(i)"
+          (click)="experienceClick(i)"
+          class="experience"
+          *ngFor="let experience of experiences; let i=index">
+          <div class="experienceContent">
+            <div class="title">
+              <h1 class="experienceTitle">{{experience.title}}</h1>
+              <img *ngIf="experience.companyLogo"
+                src="../../../assets/companyLogo/{{experience.companyLogo}}"
+                alt="logo Abylsen"/>
+              <div class="companyName">{{experience.companyName}}</div>
+            </div>
+            <div class="experienceDate">
+              <p class="date">{{experience.dateStart | date: 'dd MMMM YYYY'}}</p>
+              <p class="date">{{experience.dateEnd | date: 'dd MMMM YYYY'}}</p>
+              <p class="date">5 mois</p>
+            </div>
+            <pre class="experienceResum"><p [@resum]="experience.style.isOpen ? 'displayed' : 'hidden'">{{experience.resum}}</p></pre>
+            <div [@agile]="experience.style.isOpen ? 'displayed' : 'hidden'" *ngIf="experience.agile" class="agile">
+              <img src="../../../assets/logoAgile.svg"
+              alt="logo Agile"/>
+              <p>AGILE</p>
+            </div>
+            <div class="keyWords">
+              <div
+                [@keyWord]="experience.style.isOpen ? 'displayed' : 'hidden'"
+                *ngFor="let keyWord of experience.keyWords"
+                class="keyWord">{{keyWord}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="onglet">
-          <div class="more">
-            <img src="../../../assets/more.svg"
-            alt="logo Agile"/>
+          <div class="onglet">
+            <div class="more">
+              <img src="../../../assets/more.svg"
+              alt="logo Agile"/>
+            </div>
+            <div [@ongletFront]="experience.style.isOpen ? 'displayed' : 'hidden'" class="front"></div>
+            <div [@ongletBack]="experience.style.isOpen ? 'displayed' : 'hidden'" class="back"></div>
           </div>
-          <div [@ongletFront]="experience.style.isOpen ? 'displayed' : 'hidden'" class="front"></div>
-          <div [@ongletBack]="experience.style.isOpen ? 'displayed' : 'hidden'" class="back"></div>
         </div>
       </div>
-    </div>
-    <div class="image_container">
-      <div class="images">
-        <div [@imgLeft]="imgLeftStage" class="filter_left">
-          <img *ngIf="imgLeft"
-          src="../../../assets/companyImg/{{imgLeft}}"
-          alt=""/>
-        </div>
-        <div [@imgRight]="imgRightStage" class="filter_right">
-          <img *ngIf="imgRight"
-          (load)="handleRightImageLoad(imgRight)"
-          src="../../../assets/companyImg/{{imgRight}}"
-          alt=""/>
+      <div class="image_container">
+        <div class="images">
+          <div [@imgLeft]="imgLeftStage" class="filter_left">
+            <img *ngIf="imgLeft"
+            src="../../../assets/companyImg/{{imgLeft}}"
+            alt=""/>
+          </div>
+          <div [@imgRight]="imgRightStage" class="filter_right">
+            <img *ngIf="imgRight"
+            (load)="handleRightImageLoad(imgRight)"
+            src="../../../assets/companyImg/{{imgRight}}"
+            alt=""/>
+          </div>
         </div>
       </div>
     </div>

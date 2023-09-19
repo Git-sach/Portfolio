@@ -1,0 +1,47 @@
+<div class="container">
+  <form (submit)="submitComment()" [formGroup]="form">
+    <div class="title">
+      <h2>Laissez un commentaire</h2>
+    </div>
+    <div class="firstName-lastName-company">
+      <div class="input_container">
+        <label>Nom</label>
+        <input formControlName="firstName" type="text">
+      </div>
+      <div class="input_container">
+        <label>Prénom</label>
+        <input formControlName="lastName" type="text">
+      </div>
+      <div class="input_container">
+        <label>Entreprise</label>
+        <input formControlName="company" type="text">
+      </div>
+    </div>
+    <div class="comment">
+      <label>Commentaire</label>
+      <textarea formControlName="comment" cols="30" rows="10"></textarea>
+    </div>
+    <div class="note_validation">
+      <div class="note">
+        <label>Donner une note à la prestation</label>
+        <div class="elements_note" formArrayName="note">
+          <input *ngFor="let note of note.controls; let i=index" class="element_note"  type="checkbox" [formControlName]="i">
+        </div>
+      </div>
+      <div class="validation">
+        <button>Envoyer</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #confirmCloseDialog>
+  <div class="confirm_close_dialog_container">
+    <h2>Attention</h2>
+      Etes-vous sûr de vouloir quitter l'édition et perdre vos modifications ?
+      <div class="action-dialog-close">
+        <button (click)="closeAllDialog()" class="alert-button">Quitter la page</button>
+        <button (click)="closeDialogConfirmClose()">Rester sur la page</button>
+      </div>
+  </div>
+</ng-template>

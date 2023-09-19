@@ -15,5 +15,4 @@ export class SlidingTextDirective {
     this.titleElement!.nativeElement
     .style.transform = `translateX(${elementPositionRelativeToViewport*ratioTranslateRelativeToViewport}%)`;
   }
-
 }

@@ -1,0 +1,101 @@
+.sectionContainer {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.comments {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.comments .comment {
+  background: #FFF;
+  width: 340px;
+  height: 190px;
+  border-radius: 0.25rem;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comments .comment .commentHeader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 15px;
+}
+
+.comments .comment .commentHeader .name_date_note{
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.comments .comment .commentHeader .name_date_note .name_date{
+  display: flex;
+  font-size: 18px;
+  gap: 3px;
+  align-items: end;
+  margin-top: 0;
+}
+.comments .comment .commentHeader .name_date_note .name_date .date{
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.comments .comment .commentHeader .company{
+  font-size: 12px;
+}
+
+.comments .comment .commentHeader .name_date_note .note {
+  display: flex;
+  gap: 6px;
+}
+
+.comments .comment .commentHeader .name_date_note .note .noteElement {
+  width: 11px;
+  height: 11px;
+  border-radius: var(--bubleBorderRadius);
+  border: var(--bubleBorder);
+  box-shadow: var(--bubleShadow);
+}
+
+.comments .comment .commentHeader .name_date_note .note .checked {
+  background: var(--bubleBackgroundColor);
+}
+
+.comments .comment .commentContent p{
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px){
+
+  .comments {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .comments .comment:nth-child(2n) {
+    margin-left: 10%;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+
+  .comments .comment:nth-child(2n) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 390px){
+
+  .comments .comment{
+    width: 100%;
+  }
+}

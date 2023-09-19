@@ -1,0 +1,33 @@
+<div class="sectionContainer">
+  <div class="container">
+    <div class="titleSections">
+      <h1 class="titleFront">{{title}}</h1>
+      <h1 appSlidingText class="titleBack">{{title}}</h1>
+    </div>
+  </div>
+  <h3>{{subTitle}}</h3>
+  <div class="testimonialContainer">
+    <div class="comments">
+      <div *ngFor="let comment of comments" class="comment">
+        <div class="commentHeader">
+          <div class="name_date_note">
+            <div class="name_date">
+              <div class="firstName">{{comment.firstName}}</div>
+              <div class="lastName">{{comment.lastName}}</div>
+              <div class="date">{{comment.date}}</div>
+            </div>
+            <div class="note">
+              <div *ngFor="let note of getNoteElementsClasses(comment.note)" class={{note}}></div>
+            </div>
+          </div>
+          <div class="company"><p>{{comment.company}}</p></div>
+        </div>
+        <div class="commentContent">
+          <p>{{comment.content}}</p>
+        </div>
+      </div>
+    </div>
+    <button (click)="openDialog()">Comenter</button>
+  </div>
+</div>
+

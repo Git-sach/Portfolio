@@ -1,0 +1,100 @@
+.container {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form label{
+  color: var(--mainColor1b);
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.firstName-lastName-company {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap-reverse;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment textarea{
+  width: 100%;
+  border-radius: 5px;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  padding: 10px;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  padding: 0 10px;
+}
+
+.note_validation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.note_validation .note {
+  display: flex;
+  flex-direction: column;
+}
+
+.note_validation .note .elements_note{
+  display: flex;
+  gap: 5px;
+}
+
+.note_validation .note .elements_note input{
+  cursor: pointer;
+}
+
+.note_validation .note .elements_note .element_note {
+  appearance: none;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--bubleBorderRadius);
+  border: var(--bubleBorder);
+  box-shadow: var(--bubleShadow);
+}
+
+.note_validation .note .elements_note .element_note:checked {
+  background-color: var(--mainColor2);
+}
+
+.note_validation button {
+  margin-top: 20px;
+}
+
+.confirm_close_dialog_container {
+  padding: 20px;
+}
+
+.confirm_close_dialog_container .action-dialog-close {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.confirm_close_dialog_container .action-dialog-close .alert-button {
+  background-color: rgb(113, 0, 0);
+}

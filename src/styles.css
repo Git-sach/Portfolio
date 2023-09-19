@@ -1,3 +1,10 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.cdk-global-scrollblock{
+  position: static !important;
+  width: initial !important;
+  overflow-y: inherit !important;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'KoHo', sans-serif;
@@ -40,15 +47,12 @@ p {
 
 .titleSections {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .titleSections .titleFront {
   font-size: 64px;
   font-weight: 300;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
 }
 
 .titleSections .titleBack {
@@ -62,13 +66,20 @@ p {
   left: -5%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background-color: var(--backgroundColor);
-  height: 100vh;
   overflow-x: hidden;
 }
+
+.sectionContainer {
+  padding: 0 7vh;
+}
+
 
 ::-webkit-scrollbar {
   width: 1vh;
@@ -79,13 +90,22 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #cbcbcb;
+  background: var(--mainColor1b);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a7a7a7;
+  background: var(--mainColor1);
 }
 
-
+button {
+  padding: 0 40px;
+  height: 40px;
+  background-color: var(--mainColor1);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width: 1024px){
@@ -118,7 +138,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
   h3 {
     font-size: 13px;
     margin-bottom: 40px;
@@ -129,7 +149,7 @@ body {
   }
 
   .titleSections {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   .titleSections .titleFront {
@@ -142,8 +162,11 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 390px){
   .titleSections {
     margin-bottom: 15px;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

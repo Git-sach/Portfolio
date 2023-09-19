@@ -1,0 +1,97 @@
+.container {
+  background-color: var(--mainColor1);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  margin-bottom: 10px;
+}
+
+.container .filter {
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  transform: translate(50%, 0);
+  width: 230vh;
+  background: radial-gradient(circle,
+  rgba(36, 36, 36, .38),
+  rgba(32, 36, 41, 1) 70%,
+  var(--mainColor1)
+ );
+  z-index: 2;
+}
+
+.container .backgroundAccueil {
+  height: 230vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 360s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(50%, -50%);
+  }
+}
+
+.container .content {
+  position: absolute;
+  /* border: white 1px solid; */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  text-align: center;
+}
+
+.container .content .accueilTitle {
+  color: var(--mainColor2);
+  margin-bottom: 15px;
+}
+
+.container .content p {
+  color: var(--backgroundColor);
+}
+
+.container .content img {
+  width: 70%;
+  margin-bottom: 50px;
+}
+
+.container .content .reseaux{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 60px;
+}
+
+.container .content .reseaux svg{
+  width: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+
+  .container .content {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 390px){
+
+  .container .content {
+    width: 100%;
+  }
+}
