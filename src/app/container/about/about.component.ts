@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  public title: string = `Bonjour, enchanté !`;
+  public title: string = `Bonjour !`;
   public resum: string = `Je suis Adrien, développeur web indépendant spécialisé dans le Front-end.
   Après avoir accumulé une expérience significative en travaillant sur divers projets pour de grandes entreprises, j'ai choisi d'exploiter mes compétences en proposant mes services en tant qu'indépendant.
 

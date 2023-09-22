@@ -80,7 +80,6 @@ body {
   padding: 0 7vh;
 }
 
-
 ::-webkit-scrollbar {
   width: 1vh;
 }
@@ -145,12 +144,16 @@ button {
 
 @media only screen and (max-width: 767px){
   h3 {
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 40px;
   }
 
   p {
     font-size: 11px;
+  }
+
+  .sectionContainer {
+    padding: 0 2vh;
   }
 
   .titleSections {
