@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { trigger, state, style, animate, transition, group } from '@angular/animations';
 import { experiences } from './experiences';
 
@@ -138,7 +138,7 @@ import { experiences } from './experiences';
         height:'40px',
       })),
       state('displayed', style({
-        height:'105px',
+        height:'110px',
       })),
       transition('hidden <=> displayed', animate('.3s ease-out'))
     ]),
@@ -147,37 +147,33 @@ import { experiences } from './experiences';
       state('hidden', style({
         width: '0%',
       })),
-      state('between', style({
-        width: '10%',
-      })),
       state('displayed', style({
         width: '100%',
       })),
-      transition('hidden <=> between', animate('.05s ease-out')),
-      transition('displayed <=> between', animate('.05s ease-out'))
+      transition('hidden => displayed', animate('.3s ease-out')),
+      transition('displayed => hidden', animate('0s')),
     ]),
     trigger('imgLeft', [
       state('hidden', style({
         width: '0%',
       })),
-      state('between', style({
-        width: '90%',
-      })),
       state('displayed', style({
         width: '100%',
       })),
-      transition('hidden <=> between', animate('.05s ease-out')),
-      transition('displayed <=> between', animate('.05s ease-out'))
+      transition('hidden => displayed', animate('0s')),
+      transition('displayed => hidden', animate('.3s ease-out')),
     ]),
   ]
 })
 export class ExperiencesComponent {
 
+  @ViewChildren('ongletBack') ongletBack?: QueryList<ElementRef>;
+
   public imgLeft: string|null = null;
-  public imgLeftStage: string = 'displayed'
+  public imgLeftStage: string = 'hidden';
 
   public imgRight: string|null = null;
-  public imgRightStage: string = 'hidden'
+  public imgRightStage: string = 'hidden';
   public rightImageLoad: string|null = null;
 
   public animationBlocked: boolean = false;
@@ -190,21 +186,22 @@ export class ExperiencesComponent {
     if (!this.experiences[index].style.isOpen) {
       this.experiences.forEach(experience => experience.style.isOpen = false);
 
-      this.sideImgDisplay('right');
+        this.animationBlocked = true;
+        this.imgRightStage = 'displayed';
 
-      this.animationBlocked = true;
-      setTimeout(() => {
-        this.imgLeft = this.experiences[index].style.img;
-        this.sideImgDisplay('left');
-        this.animationBlocked = false;
-      }, 50);
+        setTimeout(() => {
+          this.imgLeft = this.imgRight
+          this.imgLeftStage = 'displayed';
+          this.imgRightStage = 'hidden';
+          this.animationBlocked = false;
+        }, 300);
+
     } else {
-      this.imgRight = this.experiences[index].style.img;
-      this.imgLeft = null;
-      this.sideImgDisplay('right');
+      this.imgLeftStage = 'hidden';
+      //cas du double click sur une ligne
       setTimeout(() => {
-        this.sideImgDisplay('both');
-      }, 50);
+        this.imgLeftStage = 'hidden';
+      }, 300);
     }
     this.experiences[index].style.isOpen = !this.experiences[index].style.isOpen;
 
@@ -217,57 +214,17 @@ export class ExperiencesComponent {
   }
 
   public experienceHover(index: number): void {
-    if (!this.experiences[index].style.isOpen) {
-      if(!this.animationBlocked) {
-        this.imgRight = this.experiences[index].style.img;
-        if (this.imgRight === this.rightImageLoad) {
-          this.sideImgDisplay('both');
-        }
-      } else {
-        setTimeout(() => {
-          this.imgRight = this.experiences[index].style.img;
-          if (this.imgRight === this.rightImageLoad) {
-            this.sideImgDisplay('both');
-          }
-        }, 50)
-      }
+    if (!this.experiences[index].style.isOpen && !this.animationBlocked) {
+      this.imgRight = this.experiences[index].style.img;
     }
+    this.ongletBack!.get(index)!.nativeElement.classList.add('hoverback');
   }
 
-  public experienceHoverLeave(index: number): void {
-    if (!this.animationBlocked) {
-      this.sideImgDisplay('left');
-      if (!this.experiences[index].style.isOpen) {
-        this.animationBlocked = true
-        setTimeout(() => {
-          this.animationBlocked = false;
-        }, (50))
-      }
-    }
-  }
-
-  private sideImgDisplay( side: 'right'|'left'|'both' ) {
-    switch(side) {
-      case 'left': {
-        this.imgLeftStage = 'displayed';
-        this.imgRightStage = 'hidden';
-        break;
-      }
-      case 'both': {
-        this.imgLeftStage = 'between';
-        this.imgRightStage = 'between';
-        break;
-      }
-      case 'right': {
-        this.imgLeftStage = 'hidden';
-        this.imgRightStage = 'displayed';
-        break;
-      }
-    }
+  public experienceLeav (index: number): void {
+    this.ongletBack!.get(index)!.nativeElement.classList.remove('hoverback');
   }
 
   public handleRightImageLoad(img: string) {
     this.rightImageLoad = img;
-    this.sideImgDisplay('both');
   }
 }

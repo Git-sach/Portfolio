@@ -10,6 +10,10 @@
   font-family: 'KoHo', sans-serif;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
 :root {
   --backgroundColor: #FAFAFA;
   --mainColor1: #202429;
@@ -66,10 +70,6 @@ p {
   left: -5%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background-color: var(--backgroundColor);
@@ -94,6 +94,11 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--mainColor1);
+}
+
+::selection {
+  background-color: var(--mainColor2);
+  color: #f1f1f1;
 }
 
 button {
@@ -167,6 +172,3 @@ button {
     margin-bottom: 15px;
   }
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

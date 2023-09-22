@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   public title: string = `Bonjour, enchanté !`;
-  public resum: string = `Bonjour! Je m’appelle Adrien Cheynet. Je suis développeur web full stack. J’ai passé beaucoup de temps professionel mais aussi personel a déveloper des sites web en commencement par la définition du produit et le prototypage, en passant par l’intégration du projet et en terminant par la mise en ligne de l’application.
+  public resum: string = `Je suis Adrien, développeur web indépendant spécialisé dans le Front-end.
+  Après avoir accumulé une expérience significative en travaillant sur divers projets pour de grandes entreprises, j'ai choisi d'exploiter mes compétences en proposant mes services en tant qu'indépendant.
 
-Je possède des compétences variées dans le domaine du web principalement acquises de façon autodicdacte. Je me forme continuelement du les tendances et framworks actuel afin de proposer le meilleur lors de l’élaboration des projets sur les quel je suis amenés a travailler.
+  J'aide les entreprises et particuliers à concrétiser leurs projets en ligne.
+  Mon objectif est de mettre en place des application performantes, fiable et évolutifs. Ce sont autent d'engagements qui animes mes journées et vos projets.
 
-Je peux donc vous acompagner sur les différentes étapes de votre porjet web pour répondre a vos besoins.`;
+  Je porte un grand intérer au travail minussieusement réalisé et prend un réel plaisir à découvrir de nouveaux secteurs qui me permetent de relever de nouveau défis.
+
+  Explorez mon portflio pour découvir les projets que j'ai réalisé et n'héhistez pas à me contacter pour que l'on échanges sur la ménière dont je pourais vous aider à atteindre vos objectifs`;
 }

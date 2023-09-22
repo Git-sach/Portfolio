@@ -62,9 +62,9 @@ export class PortfolioComponent implements AfterViewInit, OnInit{
   public projects: Project[] = [
     {
       title: 'Geoquizz',
-      resum: `Application web sous forme de jeux ou le but est de trouver le nom des département Français le plus rapidement possible. Un système de score permet de perfectionner sont temps et de réaliser des records de rapidité tout en apprenant les départements Français.
+      resum: `Application web sous forme de jeux ♟ ou le but est de trouver le nom des département Français le plus rapidement possible. Un système de score permet de perfectionner sont temps et de réaliser des records de rapidité tout en apprenant les départements Français ! 😋
 
-      GeoQuizz est une application essentiellement Front-end qui avait pour but de recodé (a ma sauce) un concept qui m’avait plu, en me permettant de perfectionner mes connaissance en Angular.`,
+      GeoQuizz est une application essentiellement Front-end qui avait pour but de recodé (a ma sauce) un concept qui m’a plu, en me permettant de perfectionner mes connaissance en Angular.`,
       keyWords: ['Angular', 'TypeSript', 'NodeJs'],
       sources: {
       },

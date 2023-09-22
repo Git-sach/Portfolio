@@ -18,17 +18,87 @@
   rgba(32, 36, 41, 1) 70%,
   var(--mainColor1)
  );
-  z-index: 2;
+  z-index: 8;
 }
 
-.container .backgroundAccueil {
-  height: 230vh;
+.container .backgroundAccueil0 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 300s linear infinite;
+  z-index: 7;
+}
+
+.container .backgroundAccueil1 {
+  height: 170vh;
   position: absolute;
   right: 0;
   top: 50%;
   transform-origin: 100% 0%;
   animation: rotate 360s linear infinite;
+  z-index: 6;
+}
+
+.container .backgroundAccueil2 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 280s linear infinite;
+  z-index: 5;
+}
+
+.container .backgroundAccueil3 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 300s linear infinite;
+  z-index: 4;
+}
+
+.container .backgroundAccueil4 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 220s linear infinite;
+  z-index: 3;
+}
+
+.container .backgroundAccueil5 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 180s linear infinite;
+  z-index: 2;
+}
+
+.container .backgroundAccueil6 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 100s linear infinite;
   z-index: 1;
+}
+
+.container .backgroundAccueil7 {
+  height: 170vh;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 100% 0%;
+  animation: rotate 50s linear infinite;
+  z-index: 0;
 }
 
 @keyframes rotate {
@@ -52,7 +122,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 4;
+  z-index: 10;
   text-align: center;
 }
 

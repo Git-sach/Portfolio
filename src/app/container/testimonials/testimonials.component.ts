@@ -11,7 +11,7 @@ import { TestimonialsFormComponent } from './testimonials-form/testimonials-form
 export class TestimonialsComponent implements OnInit{
 
   public title: string = 'Témoignage';
-  public subTitle: string = 'Quelque personnes avec les quelles j’ai travaillé, qui ont fait de bon retours ';
+  public subTitle: string = 'Ce que les personnes disent a propos de mon travail';
 
   public comments: Comment[] = [
     {
