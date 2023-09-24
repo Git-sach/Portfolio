@@ -31,8 +31,8 @@
   top: 0;
   right: 0;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .images .filter_left img{
@@ -48,8 +48,8 @@
   right: 0;
   overflow: hidden;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .images .filter_right img{
