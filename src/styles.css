@@ -17,12 +17,17 @@ html {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+body {
+  /* overflow-x: hidden; */
+  margin: 0;
+  background-color: var(--backgroundColor);
+}
 
 :root {
   --backgroundColor: #FAFAFA;
   --mainColor1: #202429;
   --mainColor1b: rgba(35, 37, 40, 0.85);
-  --mainColor2: #EAA92C;
+  --mainColor2: #EAA92C;;
 
   --bubleSize: 10px;
   --bubleBackgroundColor: var(--mainColor2);
@@ -74,14 +79,9 @@ p {
   left: -5%;
 }
 
-body {
-  margin: 0;
-  background-color: var(--backgroundColor);
-  overflow-x: hidden;
-}
-
 .sectionContainer {
   padding: 0 7vh;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -129,7 +129,7 @@ button {
   }
 
   p {
-    font-size: 13px;
+    /* font-size: 14px; */
   }
 
   .titleSections {
@@ -148,12 +148,12 @@ button {
 
 @media only screen and (max-width: 767px){
   h3 {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 40px;
   }
 
   p {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .sectionContainer {

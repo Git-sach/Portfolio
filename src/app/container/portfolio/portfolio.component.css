@@ -31,14 +31,17 @@
 }
 
 .portflioContainer .content .navigation nav ul li{
+  color: var(--mainColor1);
+  opacity: .8;
   position: relative;
   font-size: 20px;
   cursor: pointer;
   transition: .3s;
+  font-weight: 400;
 }
 
 .portflioContainer .content .navigation nav ul li:hover{
-  margin-top: -5px;
+  font-weight: 600;
   transition: .3s;
 }
 
@@ -83,8 +86,8 @@
 .specifications {
   display: flex;
   justify-content: space-between;
-  text-align: end;
-  align-items: end;
+  text-align: flex-end;
+  align-items: flex-end;
 }
 
 .specifications .keyWords {
@@ -119,8 +122,6 @@
   top: 50%;
   transform: translate(70%, -50%);
 }
-
-
 
 .portflioContainer .images {
   width: 40%;
@@ -198,8 +199,14 @@
     margin: auto;
   }
 
+  .portflioContainer .images .imgLeft {
+    bottom: 20%;
+  }
   .portflioContainer .images .imgBetween {
     margin: 15% 0;
+  }
+  .portflioContainer .images .imgRight {
+    top: 0%;
   }
 
 }

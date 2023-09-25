@@ -51,6 +51,7 @@ import { Project } from 'src/app/shared/interfaces/project.interface';
 export class PortfolioComponent implements AfterViewInit, OnInit{
 
   @ViewChildren('point') points: QueryList<any> | undefined;
+  @ViewChildren('liMenu') liMenu: QueryList<ElementRef> | undefined;
 
   public isSmallScreen: boolean = false;
 
@@ -113,6 +114,8 @@ export class PortfolioComponent implements AfterViewInit, OnInit{
   }
 
   ngAfterViewInit(): void {
+    this.liMenu!.get(0)!.nativeElement.style.opacity = '1';
+    this.liMenu!.get(0)!.nativeElement.style.fontWeight = '600';
     this.calculateDiffPoint();
   }
 
@@ -124,7 +127,17 @@ export class PortfolioComponent implements AfterViewInit, OnInit{
   public navClick(index: number): void {
     const oldSelectedProject: number = this.selectedProject;
     const mouve = (index - this.selectedProject)*this.diffPoints;
-    this.points!.get(oldSelectedProject).nativeElement.style.transform = `translate(${mouve}px, -50%)`
+
+    // gestion du point sous la navigation
+    this.points!.get(oldSelectedProject).nativeElement.style.transform = `translate(${mouve}px, -50%)`;
+
+    // gestion de la couleur des li du menu
+    this.liMenu!.get(index)!.nativeElement.style.opacity = '1';
+    this.liMenu!.get(index)!.nativeElement.style.fontWeight = '600';
+    this.liMenu!.get(oldSelectedProject)!.nativeElement.style.opacity = '.8';
+    this.liMenu!.get(oldSelectedProject)!.nativeElement.style.fontWeight = '400';
+
+
 
     if (mouve < 0) {
       this.detailStateAnimation = 'hiddenToLeft';

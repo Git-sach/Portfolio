@@ -56,7 +56,10 @@ export class TestimonialsComponent implements OnInit{
 
   openDialog(): void {
     this.dialog.open(TestimonialsFormComponent, {
-      panelClass: 'custom-dialog-container'
+      height: '90vh',
+      width: '90vw',
+      maxWidth: '100vw',
+      panelClass: 'custom-dialog-container',
     });
   }
 

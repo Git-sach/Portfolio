@@ -60,6 +60,7 @@
 
 .experiences {
   width: 80%;
+  /* border: black 1px solid; */
 }
 
 .experience {
@@ -138,13 +139,13 @@
 }
 
 .experienceResum {
-  max-width: 100%;
+  max-width: 70%;
   margin: 0;
   overflow: hidden;
+  font-size: 12px;
 }
 pre {
   white-space: pre-line;
-  text-align: justify;
 }
 
 .agile {
@@ -259,11 +260,15 @@ pre {
   }
 
   .experienceContent .experienceTitle{
-    font-size: 19px;
+    font-size: 16px;
   }
 
   .date {
     font-size: 8px;
+  }
+
+  .experienceResum {
+    max-width: 100%;
   }
 
   .experienceContent img{

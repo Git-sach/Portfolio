@@ -7,12 +7,17 @@
   max-width: 600px;
 }
 
-.aboutContainer h3 {
-  font-size: 17px;
+.aboutContainer p {
   line-height: 1.5rem;
 }
 
 pre {
   white-space: pre-line;
   text-align: justify;
+}
+
+@media only screen and (max-width: 767px){
+  .aboutContainer p {
+    line-height: 1.2rem;
+  }
 }

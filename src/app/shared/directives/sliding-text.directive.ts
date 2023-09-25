@@ -9,6 +9,7 @@ export class SlidingTextDirective {
 
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {
+
     const elementPositionRelativeToViewport: number = -this.titleElement!.nativeElement.getBoundingClientRect().top;
     const ratioTranslateRelativeToViewport: number = .03;
 

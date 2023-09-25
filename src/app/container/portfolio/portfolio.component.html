@@ -11,6 +11,7 @@
           <nav>
             <ul>
               <li
+                #liMenu
                 *ngFor="let project of projects; let index = index"
                 (click)="navClick(index)">{{project.title}}
               </li>
@@ -32,15 +33,15 @@
           </div>
           <div *ngIf="isSmallScreen" class="images">
             <img class="imgLeft"
-            appSlidingImg [ratioX]="-.004" [ratioY]="-.02"
+            appSlidingImg [ratioX]="-.004" [ratioY]="-.08"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
             alt="Geoquizz"/>
             <img class="imgBetween"
-            appSlidingImg [ratioX]="-.001" [ratioY]=".01"
+            appSlidingImg [ratioX]="-.001" [ratioY]=".06"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
             alt="Geoquizz"/>
             <img class="imgRight"
-            appSlidingImg [ratioX]=".005" [ratioY]="-.03"
+            appSlidingImg [ratioX]=".005" [ratioY]="-.1"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
             alt="Geoquizz"/>
           </div>
@@ -59,15 +60,15 @@
       </div>
       <div *ngIf="!isSmallScreen" class="images">
         <img class="imgLeft"
-        appSlidingImg [ratioX]="-.004" [ratioY]="-.02"
+        appSlidingImg [ratioX]="-.004" [ratioY]="-.01"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
         alt="Geoquizz"/>
         <img class="imgBetween"
-        appSlidingImg [ratioX]="-.001" [ratioY]=".01"
+        appSlidingImg [ratioX]="-.001" [ratioY]=".005"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
         alt="Geoquizz"/>
         <img class="imgRight"
-        appSlidingImg [ratioX]=".006" [ratioY]="-.03"
+        appSlidingImg [ratioX]=".006" [ratioY]="-.015"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
         alt="Geoquizz"/>
       </div>

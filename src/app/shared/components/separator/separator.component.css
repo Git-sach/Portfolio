@@ -1,8 +1,8 @@
 .separatorContainer {
-    width: 100vw;
+    width: auto;
     /* border: black solid 1px; */
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     position: relative;
     gap: 12vw;
   }
