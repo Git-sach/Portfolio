@@ -1,52 +1,60 @@
 .separatorContainer {
     width: auto;
-    /* border: black solid 1px; */
+    height: 10px;
+    /* border: rgb(8, 0, 252) solid 1px; */
     display: flex;
     align-items: flex-end;
     position: relative;
-    gap: 12vw;
+    gap: 80px;
   }
 
   .separatorContainer .leftSeparator{
     height: 8px;
     width: 50%;
     /* border: red solid 1px; */
-    transform: skew(0deg, .8deg) translateY(3px);
+    /* Sombre calcul */
+    transform: skew(0deg, .8deg) translateY(calc((-25vw * 0.014) + 2px));
     background-color: var(--backgroundColor);
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
     z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
   .separatorContainer .rightSeparator{
     height: 8px;
     width: 50%;
     /* border: red solid 1px; */
-      transform: skew(0deg, -.8deg) translateY(3px);
+    transform: skew(0deg, -.8deg) translateY(calc((-25vw * 0.014) + 2px));
     background-color: var(--backgroundColor);
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
     z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   .separatorContainer .triangle {
-    height: 2vw;
-    width: 2vw;
-    bottom: -26px;
+    /* bottom: -17px; */
+    /* bottom: -2vw; */
+    /* hauteure des Separator + hauteur du border-top (definit dans le .ts) */
+    bottom: -11px;
     left: 50%;
     transform: translateX(-50%);
-    border-top: var(--backgroundColor) solid 20px;
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.05));
-    border-right : 8vw solid transparent;
-    border-left : 8vw solid transparent;
+    border-right : 50px solid transparent;
+    border-left : 50px solid transparent;
     position: absolute;
     z-index: 2;
   }
 
   .separatorContainer .mask {
     height: 25px;
-    bottom: -7px;
+    bottom: -1px;
     background-color: var(--backgroundColor);
-    /* border: rgb(49, 145, 76) solid 1px; */
     width: 100%;
     position: absolute;
     z-index: 3;
+    /* display: none; */
   }

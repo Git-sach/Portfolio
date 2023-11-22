@@ -1,6 +1,12 @@
 .sectionContainer {
-  margin-top: 200px;
-  margin-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.testimonialsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .comments {
@@ -11,7 +17,8 @@
 }
 
 .comments .comment {
-  background: #FFF;
+  background: transparent;
+  border: rgba(0, 0, 0, 0.15) 1px solid;
   width: 340px;
   height: 190px;
   border-radius: 0.25rem;
@@ -46,6 +53,7 @@
 .comments .comment .commentHeader .name_date_note .name_date .date{
   font-size: 12px;
   padding-left: 8px;
+  opacity: .6;
 }
 
 .comments .comment .commentHeader .company{
@@ -75,6 +83,11 @@
 
 @media only screen and (max-width: 1200px){
 
+
+  .testimonialsContainer {
+    align-items: flex-start;
+  }
+
   .comments {
     flex-direction: column;
     gap: 30px;
@@ -95,7 +108,16 @@
 
 @media only screen and (max-width: 390px){
 
+  .sectionContainer {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
   .comments .comment{
+    width: 100%;
+  }
+
+  button {
     width: 100%;
   }
 }

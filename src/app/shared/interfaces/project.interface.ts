@@ -11,5 +11,6 @@ export interface Project {
     imgLeft: string;
     imgBetween: string;
     imgRight: string;
-  }
+  },
+  blured: boolean
 }

@@ -63,44 +63,53 @@ export class PortfolioComponent implements AfterViewInit, OnInit{
   public projects: Project[] = [
     {
       title: 'Geoquizz',
-      resum: `Application web sous forme de jeux ♟ ou le but est de trouver le nom des département Français le plus rapidement possible. Un système de score permet de perfectionner sont temps et de réaliser des records de rapidité tout en apprenant les départements Français ! 😋
+      resum: `Application web sous forme de jeu où le but est de trouver le nom des départements français le plus rapidement possible. Un système de score permet de perfectionner son temps et de réaliser des records de rapidité tout en apprenant les départements Français !
 
-      GeoQuizz est une application essentiellement Front-end qui avait pour but de recodé (a ma sauce) un concept qui m’a plu, en me permettant de perfectionner mes connaissance en Angular.`,
+      GeoQuizz est une application essentiellement Front-end qui avait pour but de recoder (à ma manière) un concept qui m’a plu, en me permettant de perfectionner mes connaissances en Angular.`,
       keyWords: ['Angular', 'TypeSript', 'NodeJs'],
       sources: {
+        website: 'https://multiapp.adriencheynet.fr/geoquizz',
+        codeSource: 'https://github.com/Git-sach/Portfolio'
       },
       images: {
         imgLeft: 'geoquizzImgLeft.png',
         imgBetween: 'geoquizzImgCenter.png',
         imgRight: 'geoquizzImgRight.png',
-      }
+      },
+      blured: false
     },
     {
       title: 'Portfolio',
-      resum: `Portfolio que j’ai crée il y a quelque temps pour présenter mes compétences, mes expériences et mes projet. Application qui avait pour intérêt de posséder un back-end réalisé avec node.js qui rendait possible l’administration du site et mettait en place un lien fort entre expériences, compétences et projets.
+      resum: `Portfolio que j’ai créé il y a quelque temps pour présenter mes compétences, mes expériences et mes projets. Application qui avait pour intérêt de posséder un back-end réalisé avec node.js qui rendait possible l’administration du site et mettait en place un lien fort entre expériences, compétences et projets.
 
-      Cependant, étant un éternel insatisfait, vous ne naviguez pas en ce moment sur ce site mais sur un portfolio qui cible mieux les éléments de mon profil que je souhaite aujourd’hui exposer.`,
+      Cependant, vous ne naviguez pas en ce moment sur ce site mais sur un portfolio qui cible mieux les éléments de mon profil que je souhaite aujourd’hui exposer.`,
       keyWords: ['Angular', 'TypeSript', 'NodeJs'],
       sources: {
+        website: 'https://portfolio.adriencheynet.fr/projects',
+        codeSource: 'https://github.com/Git-sach/My-Portfolio'
       },
       images: {
         imgLeft: 'portfolioImgLeft.png',
         imgBetween: 'portfolioImgCenter.png',
         imgRight: 'portfolioImgRight.png',
-      }
+      },
+      blured: false
     },
     {
-      title: 'Projet 3',
-      resum: `Application web sous forme de jeux ou le but est de trouver le nom des département Français le plus rapidement possible. Un système de score permet de perfectionner sont temps et de réaliser des records de rapidité tout en apprenant les départements Français.
-      GeoQuizz est une application essentiellement Front-end qui avait pour but de recodé (a ma sauce) un concept qui m’avait plu, en me permettant de perfectionner mes connaissance en Angular.`,
-      keyWords: ['Angular', 'TypeSript'],
+      title: 'Bientôt ...',
+      resum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+      keyWords: ['Bientôt', 'Bientôt', 'Bientôt'],
       sources: {
       },
       images: {
-        imgLeft: 'geoquizzImgLeft.png',
-        imgBetween: 'geoquizzImgCenter.png',
-        imgRight: 'geoquizzImgRight.png',
-      }
+        imgLeft: 'soonImg.png',
+        imgBetween: 'soonImg.png',
+        imgRight: 'soonImg.png',
+      },
+      blured: true
     }
   ]
 
@@ -170,5 +179,9 @@ export class PortfolioComponent implements AfterViewInit, OnInit{
   private calculateDiffPoint(): void {
     this.positionFirstPoint = this.points?.get(0).nativeElement.getBoundingClientRect().left
     this.diffPoints = this.points?.get(1).nativeElement.getBoundingClientRect().left - this.positionFirstPoint;
+  }
+
+  public clickWebsite(url: string): void {
+    document.location.href = url;
   }
 }

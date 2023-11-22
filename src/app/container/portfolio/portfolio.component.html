@@ -1,5 +1,5 @@
 <div class="sectionContainer">
-  <div class="container">
+  <div class="subSectionContainer">
     <div class="titleSections">
       <h1 class="titleFront">{{title}}</h1>
       <h1 appSlidingText class="titleBack">{{title}}</h1>
@@ -25,23 +25,23 @@
             </div>
           </div>
         </div>
-        <div class="detail"
+        <div [ngClass]="projects[selectedProject].blured ? 'detail blured' : 'detail'"
         [@content]="detailStateAnimation">
           <div class="resum">
             <h2>{{projects[selectedProject].title}}</h2>
             <pre><p>{{projects[selectedProject].resum}}</p></pre>
           </div>
-          <div *ngIf="isSmallScreen" class="images">
+          <div *ngIf="isSmallScreen" [ngClass]="projects[selectedProject].blured ? 'images blured' : 'images'">
             <img class="imgLeft"
-            appSlidingImg [ratioX]="-.004" [ratioY]="-.08"
+            appSlidingImg [ratioX]="-.01" [ratioY]="-.06"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
             alt="Geoquizz"/>
             <img class="imgBetween"
-            appSlidingImg [ratioX]="-.001" [ratioY]=".06"
+            appSlidingImg [ratioX]="-.008" [ratioY]=".03"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
             alt="Geoquizz"/>
             <img class="imgRight"
-            appSlidingImg [ratioX]=".005" [ratioY]="-.1"
+            appSlidingImg [ratioX]=".01" [ratioY]="-.08"
             src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
             alt="Geoquizz"/>
           </div>
@@ -52,23 +52,28 @@
               </div>
             </div>
             <div class="sources">
-              <p>WEBSITE</p>
-              <p>CODE SOURCE</p>
+              <button *ngIf="projects[selectedProject].sources.website"
+              (click)="clickWebsite(projects[selectedProject].sources.website!)">WEBSITE</button>
+              <button *ngIf="projects[selectedProject].sources.codeSource"
+              (click)="clickWebsite(projects[selectedProject].sources.codeSource!)">SOURCE</button>
             </div>
           </div>
         </div>
       </div>
-      <div *ngIf="!isSmallScreen" class="images">
+      <div *ngIf="!isSmallScreen" [ngClass]="projects[selectedProject].blured ? 'images blured' : 'images'">
         <img class="imgLeft"
-        appSlidingImg [ratioX]="-.004" [ratioY]="-.01"
+        (click)="clickWebsite(projects[selectedProject].sources.website!)"
+        appSlidingImg [ratioX]="-.01" [ratioY]="-.08"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
         alt="Geoquizz"/>
         <img class="imgBetween"
-        appSlidingImg [ratioX]="-.001" [ratioY]=".005"
+        (click)="clickWebsite(projects[selectedProject].sources.website!)"
+        appSlidingImg [ratioX]="-.001" [ratioY]=".03"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
         alt="Geoquizz"/>
         <img class="imgRight"
-        appSlidingImg [ratioX]=".006" [ratioY]="-.015"
+        (click)="clickWebsite(projects[selectedProject].sources.website!)"
+        appSlidingImg [ratioX]=".01" [ratioY]="-.06"
         src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
         alt="Geoquizz"/>
       </div>
@@ -78,12 +83,15 @@
   <!-- Provisoir, pour preLoad les images -->
   <div *ngFor="let project of projects" style="display: none;">
     <img
+    (click)="clickWebsite(projects[selectedProject].sources.website!)"
     src="../../../assets/portfolio/{{project.images.imgLeft}}"
     alt="Geoquizz"/>
     <img class="imgBetween"
+    (click)="clickWebsite(projects[selectedProject].sources.website!)"
     src="../../../assets/portfolio/{{project.images.imgBetween}}"
     alt="Geoquizz"/>
     <img class="imgRight"
+    (click)="clickWebsite(projects[selectedProject].sources.website!)"
     src="../../../assets/portfolio/{{project.images.imgRight}}"
     alt="Geoquizz"/>
   </div>

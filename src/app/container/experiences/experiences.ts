@@ -1,53 +1,75 @@
-import { ExperienceWithStyle } from "src/app/shared/interfaces/experience.interface";
+import { ExperienceImpl, ExperienceWithStyle } from "src/app/shared/interfaces/experience.interface";
 
-export const experiences: ExperienceWithStyle[] = [
-  {
-    title: 'Developpeur Web ▪️ EDF',
+export const experiences: ExperienceImpl[] = [
+  new ExperienceImpl({
+    title: 'Developpeur Web',
     companyLogo: 'logoAbylsen.svg',
     companyName: 'ABYLSEN',
-    dateStart: new Date('2020/05/04'),
+    dateStart: new Date('2023/03/01'),
     dateEnd: new Date(),
-    resum: `Collaboration avec une équipe de consultant sur un projet  pour le développement d’une application destiné a permettre a EDF de réaliser et diffuser des prévisions météorologiques.
+    resum: `Développement d’une application permettant à EDF de réaliser et diffuser des prévisions météorologiques.
 
-La partie de l’application sur laquelle je suis intervenu devait permettre une visualisation et un paramétrage (sous fomes de graphiques, courbes et tableaux) des lien existant entre les bassins hydrologiques installées en France.`,
+    La partie de l’application sur laquelle je suis intervenu devait permettre une visualisation et un paramétrage (sous forme de graphiques, courbes et tableaux) des liens existants entre les différents bassins hydrologiques installés en France.
+
+    Enjeux :
+
+    ▫️ développement d'une solution ergonomique pour la manipulation de données.
+    ▫️ optimisation des performances de l'application
+    ▫️ structure garantissant une bonne maintenabilité`,
     agile: true,
     keyWords: ['Angular', 'TypeScript', 'Java', 'EDF'],
     style: {
       img: 'imgAMOA.png',
-      isOpen: false
+      isOpen: true
     }
-  },
-  {
-  title: `Assistant a maitrise d'ouvrage ▪️ EDF`,
-  companyLogo: 'logoAbylsen.svg',
-  companyName: 'ABYLSEN',
-  dateStart: new Date('2020/05/04'),
-  dateEnd: new Date(),
-  resum: `Définition d'axes d'évolution pour une application destiné a permettre à EDF, de réaliser et diffuser des prévisions météorologiques.
+  })
+  ,
+  new ExperienceImpl({
+    title: `Assistant à maitrise d'ouvrage`,
+    companyLogo: 'logoAbylsen.svg',
+    companyName: 'ABYLSEN',
+    dateStart: new Date('2021/07/01'),
+    dateEnd: new Date(),
+    resum: `Définition d'axe d'évolution pour une application destinée à permettre à EDF, de réaliser et diffuser des prévisions météorologiques.
 
-  Mon travail sur ce poste consitait à définir les futures évolutions, étudier la faisabilité des solutions fonctionnelles, analyser les dysfonctionnements de l'aplication et enfin, contrôler et suivre la réalisation des cibles.
+    Mon travail sur ce poste consistait à définir les évolutions futures, étudier la faisabilité des solutions fonctionnelles, analyser les dysfonctionnements de l'application et enfin, contrôler et suivre la réalisation des cibles.
 
-  J'ai notement mis en place des campagnes de tests automotiques réalisant des tests de non régéressions sur les APIs`,
-  agile: false,
-  keyWords: ['SQL', 'Postman', 'RestAPI', 'EDF'],
-  style: {
-      img: 'imgDev1.png',
-      isOpen: false
-    }
-  },
-  {
-   title: 'Developpeur Web ▪️ STMicroelectronics',
+    J'ai notamment mis en place des campagnes de tests automatiques réalisant des tests de non régressions sur les APIs
+
+    Enjeux :
+
+    ▫️ défintion des axes du projet à implémenter selon le besoin du client.
+    ▫️ travailler à l’atteinte des objectifs.
+    ▫️ analyser les dysfonctionnements de l'application
+    ▫️ contrôler et suivre la réalisation des cibles fixées`,
+    agile: true,
+    keyWords: ['SQL', 'Postman', 'RestAPI', 'EDF'],
+    style: {
+        img: 'imgDev1.png',
+        isOpen: false
+      }
+    }),
+  new ExperienceImpl({
+   title: 'Developpeur Web',
    companyLogo: 'logoAbylsen.svg',
    companyName: 'ABYLSEN',
-   dateStart: new Date('2020/05/04'),
-   dateEnd: new Date(),
-   resum: `Collaboration avec une équipe de consultant sur un projet  pour le développement d’une application destiné a permettre a EDF de réaliser et diffuser des prévisions météorologiques.
-   La partie de l’application sur laquelle je suis intervenu devait permettre une visualisation et un paramétrage des lien existant entre les bassins hydrologiques installées en France.`,
-   agile: false,
-   keyWords: ['Angular', 'TypeScript', 'Java'],
+   dateStart: new Date('2021/01/01'),
+   dateEnd: new Date('2021/06/01'),
+   resum: `Maintien et développement de l'application PCSA, outils de production de STMicroelectronics servant à l'optimisation des mappings et à la métrologie des wafers.
+
+   Application développée en Java EE, Pro C communiquant avec une base SQL Oracle.
+
+   Enjeux :
+
+   ▫️ développement des évolutions apportées à l'application.
+   ▫️ corrections des anomalies rencontrées via retour de tests ou utilisateur.
+   ▫️ analyse technique pour les développements et chiffrages.
+   `,
+   agile: true,
+   keyWords: ['ProC', 'JavaEE', 'Oracle SQL'],
    style: {
       img: 'imgDev2.png',
       isOpen: false
     }
-  }
+  })
 ]

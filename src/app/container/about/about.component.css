@@ -1,13 +1,18 @@
 .sectionContainer {
-  margin-top: 200px;
-  margin-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: var(--backgroundColor2);
 }
 
-.aboutContainer {
-  max-width: 600px;
+.subSectionContainer {
+  position: relative;
 }
 
-.aboutContainer p {
+.resumContainer {
+  max-width: 650px;
+}
+
+.resumContainer p {
   line-height: 1.5rem;
 }
 
@@ -16,8 +21,42 @@ pre {
   text-align: justify;
 }
 
-@media only screen and (max-width: 767px){
-  .aboutContainer p {
+.buble1 {
+  position: absolute;
+  top: 100px;
+  right: -200px;
+  height: 350px;
+  width: 350px;
+  border-radius: 30rem;
+  border: 0.3px solid rgba(0, 0, 0, 0.30);
+  background: #EAA92C;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.10) inset, 5px 5px 5px 0px rgba(0, 0, 0, 0.10);
+}
+.buble2 {
+  position: absolute;
+  top: 400px;
+  right: 200px;
+  height: 80px;
+  width: 80px;
+  border-radius: 30rem;
+  border: 0.3px solid rgba(0, 0, 0, 0.30);
+  background: #EAA92C;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.10) inset, 5px 5px 5px 0px rgba(0, 0, 0, 0.10);
+}
+
+@media only screen and (max-width: 767px) {
+  .sectionContainer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .resumContainer p {
     line-height: 1.2rem;
+  }
+
+  .buble1 {
+    display: none;
+  }
+  .buble2 {
+    display: none;
   }
 }

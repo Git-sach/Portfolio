@@ -1,9 +1,6 @@
 .sectionContainer {
-  margin-top: 200px;
-}
-
-.container {
-  margin-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
 .portflioContainer {
@@ -79,6 +76,10 @@
   justify-content: space-between;
 }
 
+.portflioContainer .content .blured {
+  filter: blur(4px);
+}
+
 .portflioContainer .content .resum pre {
   white-space: pre-line;
 }
@@ -96,21 +97,20 @@
   gap: 8px;
 }
 
-.specifications .keyWord {
-  font-size: 11px;
-  background-color: var(--mainColor1b);
-  padding: 5px 15px;
-  color: white;
-  border-radius: 4px;
+.specifications .sources {
+  display: flex;
+  gap: 10px;
 }
 
-.specifications .sources p {
-  font-size: 12px;
+.specifications .sources button {
+  height: 30px;
+  font-size: 11px;
   position: relative;
   cursor: pointer;
+  padding: 0px 25px 0px 15px;
 }
 
-.specifications .sources p::after {
+.specifications .sources button::after {
   content: '';
   position: absolute;
   width: 6px;
@@ -120,7 +120,7 @@
   border: var(--bubleBorder);
   box-shadow: var(--bubleShadow);
   top: 50%;
-  transform: translate(70%, -50%);
+  transform: translate(100%, -50%);
 }
 
 .portflioContainer .images {
@@ -131,6 +131,10 @@
   align-items: center;
 }
 
+.portflioContainer .blured {
+  filter: blur(4px);
+}
+
 .portflioContainer .images img {
   box-shadow: 2px -2px 5px 0px rgba(0, 0, 0, 0.30);
 }
@@ -139,12 +143,14 @@
   width: 45%;
   position: absolute;
   left: 0;
-  bottom: 5%;
+  bottom: 15%;
   z-index: 1;
+  cursor: pointer;
 }
 .portflioContainer .images .imgBetween {
   width: 80%;
   z-index: 0;
+  cursor: pointer;
 }
 .portflioContainer .images .imgRight {
   width: 40%;
@@ -152,6 +158,7 @@
   right: 0;
   top: 15%;
   z-index: 1;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px){
@@ -176,20 +183,19 @@
     padding-right: 20%;
   }
 
-  .specifications .keyWord {
-    font-size: 7px;
-    padding: 4px 12px;
-  }
-
   .specifications .keyWords {
     margin-top: 20px;
   }
 
-  .specifications .sources p {
+  .specifications .sources {
+    flex-direction: column;
+  }
+
+  .specifications .sources button {
     font-size: 9px;
   }
 
-  .specifications .sources p::after {
+  .specifications .sources button::after {
     width: 4px;
     height: 4px;
   }
@@ -212,6 +218,11 @@
 }
 
 @media only screen and (max-width: 390px){
+
+  .sectionContainer {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
 
   .portflioContainer .content .detail {
     min-height: 225px;

@@ -1,25 +1,39 @@
 <div class="container">
+  <mat-icon (click)="closeDialog()" class="closeIcone">close</mat-icon>
   <form (submit)="submitComment()" [formGroup]="form">
     <div class="title">
       <h2>Laissez un commentaire</h2>
     </div>
     <div class="firstName-lastName-company">
       <div class="input_container">
-        <label>Nom</label>
-        <input formControlName="firstName" type="text">
+        <label>Prénom</label>
+        <input formControlName="first_name" type="text">
+        <div class="invalidInfo">
+          <p *ngIf="form.get('first_name')?.errors?.['required'] && form.get('firstName')?.dirty || form.get('first_name')?.errors?.['required'] && showErrorsForm">
+            Ce champ ne doit pas être vide
+          </p>
+        </div>
       </div>
       <div class="input_container">
-        <label>Prénom</label>
-        <input formControlName="lastName" type="text">
+        <label>Désignation / Rôle</label>
+        <input formControlName="last_name" type="text">
       </div>
       <div class="input_container">
         <label>Entreprise</label>
-        <input formControlName="company" type="text">
+        <input formControlName="company_name" type="text">
       </div>
     </div>
     <div class="comment">
       <label>Commentaire</label>
-      <textarea formControlName="comment" cols="30" rows="10"></textarea>
+      <textarea class="textarea" formControlName="content" cols="30" rows="10"></textarea>
+      <div class="invalidInfo">
+        <p *ngIf="form.get('content')?.errors?.['required'] && form.get('content')?.dirty || form.get('content')?.errors?.['required'] && showErrorsForm">
+          Ce champ ne doit pas être vide
+        </p>
+        <p *ngIf="form.get('content')?.errors?.['maxlength'] && form.get('content')?.dirty || form.get('content')?.errors?.['maxlength'] && showErrorsForm">
+          Ce champ ne doit pas dépasser {{form.get('content')?.errors?.['maxlength'].requiredLength}} caractéres. (actuelement: {{form.get('content')?.errors?.['maxlength'].actualLength}} caractéres)
+        </p>
+      </div>
     </div>
     <div class="note_validation">
       <div class="note">

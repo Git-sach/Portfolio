@@ -1,49 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Comment } from 'src/app/shared/interfaces/comment.interface'
 import { TestimonialsFormComponent } from './testimonials-form/testimonials-form.component';
+import { Comment } from 'src/app/shared/interfaces/comment.interface';
 
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',
   styleUrls: ['./testimonials.component.css']
 })
-export class TestimonialsComponent implements OnInit{
+export class TestimonialsComponent {
+
+  @Input() public comments: Comment[] | null = null;
 
   public title: string = 'Témoignage';
-  public subTitle: string = 'Ce que les personnes disent a propos de mon travail';
-
-  public comments: Comment[] = [
-    {
-      firstName: 'Jean',
-      lastName: 'Dupon',
-      company: 'Google',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Has been the industry's standard dummy text ever since the 1500s",
-      date: undefined,
-      note: 5
-    },
-    {
-      firstName: 'Jean',
-      lastName: 'Dupon',
-      company: 'Google',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Has been the industry's standard dummy text ever since the 1500s",
-      date: undefined,
-      note: 0
-    },
-    {
-      firstName: 'Jean',
-      lastName: 'Dupon',
-      company: 'Google',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Has been the industry's standard dummy text ever since the 1500s",
-      date: undefined,
-      note: 3
-    }
-  ]
+  public subTitle: string = 'Ce que les personnes disent à propos de mon travail';
 
   constructor(public dialog: MatDialog) {
-  }
-
-  ngOnInit(): void {
   }
 
   public getNoteElementsClasses(note: number): string[] {
@@ -56,9 +28,8 @@ export class TestimonialsComponent implements OnInit{
 
   openDialog(): void {
     this.dialog.open(TestimonialsFormComponent, {
-      height: '90vh',
-      width: '90vw',
-      maxWidth: '100vw',
+      maxWidth: '95vw',
+      ariaModal: true,
       panelClass: 'custom-dialog-container',
     });
   }

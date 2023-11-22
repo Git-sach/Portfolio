@@ -14,13 +14,13 @@ export class SeparatorComponent implements AfterViewInit{
   @ViewChild('triangle') triangle: ElementRef | undefined;
 
   @Input('asset') asset: SeparatorAsset = {
-    colorTop: '#FAFAFA',
+    colorTop: '#fdfeff',
     shadowOpacity: 0.1
   }
 
   ngAfterViewInit(): void {
     this.mask!.nativeElement.style.backgroundColor = this.asset.colorTop;
-    this.triangle!.nativeElement.style.borderTop = `${this.asset.colorTop} solid 20px`;
+    this.triangle!.nativeElement.style.borderTop = `${this.asset.colorTop} solid 10px`;
     this.triangle!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
     this.leftSeparator!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
     this.rightSeparator!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;

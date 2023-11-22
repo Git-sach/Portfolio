@@ -8,7 +8,7 @@ export class SlidingImgDirective {
   @Input() ratioX: number = 0;
   @Input() ratioY: number = 0;
 
-  constructor( private imgElement: ElementRef<HTMLImageElement>) { }
+  constructor( private imgElement: ElementRef<HTMLImageElement | HTMLDivElement>) { }
 
   @HostListener('document:scroll', ['$event'])
   public onViewportScroll() {

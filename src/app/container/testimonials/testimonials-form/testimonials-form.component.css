@@ -1,5 +1,13 @@
 .container {
   padding: 20px;
+  position: relative;
+}
+
+.closeIcone {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
 form {
@@ -30,7 +38,7 @@ form label{
   flex-direction: column;
 }
 
-.comment textarea{
+.comment textarea {
   width: 100%;
   border-radius: 5px;
   border: 1px rgba(0, 0, 0, 0.2) solid;
@@ -43,6 +51,21 @@ input {
   border-radius: 5px;
   border: 1px rgba(0, 0, 0, 0.2) solid;
   padding: 0 10px;
+}
+
+input.ng-invalid.ng-dirty {
+  border: rgb(202, 0, 0) 1px solid;
+}
+.textarea.ng-invalid.ng-dirty {
+  border: rgb(202, 0, 0) 1px solid !important;
+}
+
+.invalidInfo {
+  height: 17px;
+}
+.invalidInfo p {
+  color: rgb(202, 0, 0);
+  font-size: 0.7rem;
 }
 
 .note_validation {
@@ -97,4 +120,28 @@ input {
 
 .confirm_close_dialog_container .action-dialog-close .alert-button {
   background-color: rgb(113, 0, 0);
+}
+
+@media only screen and (max-width: 768px){
+
+  .container {
+    padding: 10px;
+  }
+
+  .input_container {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .confirm_close_dialog_container button {
+    padding: 0;
+  }
+
+  .confirm_close_dialog_container .action-dialog-close {
+    margin-top: 40px;
+    flex-direction: column;
+  }
 }

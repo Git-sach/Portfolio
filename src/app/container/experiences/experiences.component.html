@@ -1,10 +1,10 @@
 <div class="sectionContainer">
-  <div class="container">
+  <div class="subSectionContainer">
     <div class="titleSections">
       <h1 class="titleFront">{{title}}</h1>
       <h1 appSlidingText class="titleBack">{{title}}</h1>
     </div>
-    <h3>{{subTitle}}</h3>
+    <p class="subTitle">{{subTitle}}</p>
     <div class="experiencesContainer">
       <div class="experiences">
         <div
@@ -22,9 +22,9 @@
               <div class="companyName">{{experience.companyName}}</div>
             </div>
             <div class="experienceDate">
-              <p class="date">{{experience.dateStart | date: 'dd MMMM YYYY'}}</p>
-              <p class="date">{{experience.dateEnd | date: 'dd MMMM YYYY'}}</p>
-              <p class="date">5 mois</p>
+              <p class="date">{{experience.dateStart | date: 'MMMM YYYY'}}</p>
+              <p class="date">{{experience.dateEnd | date: 'MMMM YYYY'}}</p>
+              <p class="date">{{experience.monthDiffExperenceDate()}} mois</p>
             </div>
             <pre class="experienceResum"><p [@resum]="experience.style.isOpen ? 'displayed' : 'hidden'">{{experience.resum}}</p></pre>
             <div [@agile]="experience.style.isOpen ? 'displayed' : 'hidden'" *ngIf="experience.agile" class="agile">
@@ -42,8 +42,11 @@
           </div>
           <div class="onglet">
             <div class="more">
-              <img src="../../../assets/more.svg"
-              alt="logo Agile"/>
+              <p>VOIRE</p>
+              <svg #crossMore viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 6H11" stroke="black" stroke-width="0.7" stroke-linecap="round"/>
+                <path [ngClass]="experience.style.isOpen ? 'vertical open' : 'vertical'" d="M6 1L6 11" stroke="black" stroke-width="0.7" stroke-linecap="round"/>
+              </svg>
             </div>
             <div [@ongletFront]="experience.style.isOpen ? 'displayed' : 'hidden'" class="front"></div>
             <div #ongletBack [@ongletBack]="experience.style.isOpen ? 'displayed' : 'hidden'" class="back"></div>

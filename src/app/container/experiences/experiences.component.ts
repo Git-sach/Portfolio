@@ -126,19 +126,19 @@ import { experiences } from './experiences';
 
     trigger('ongletBack', [
       state('hidden', style({
-        height: '30px',
+        height: '40px',
       })),
       state('displayed', style({
-        height: '100px',
+        height: '140px',
       })),
       transition('hidden <=> displayed', animate('.3s ease-out'))
     ]),
     trigger('ongletFront', [
       state('hidden', style({
-        height:'40px',
+        height:'60px',
       })),
       state('displayed', style({
-        height:'110px',
+        height:'150px',
       })),
       transition('hidden <=> displayed', animate('.3s ease-out'))
     ]),
@@ -168,6 +168,7 @@ import { experiences } from './experiences';
 export class ExperiencesComponent {
 
   @ViewChildren('ongletBack') ongletBack?: QueryList<ElementRef>;
+  @ViewChildren('crossMore') crossMore?: QueryList<ElementRef>;
 
   public imgLeft: string|null = null;
   public imgLeftStage: string = 'hidden';
@@ -179,12 +180,12 @@ export class ExperiencesComponent {
   public animationBlocked: boolean = false;
 
   public title: string = 'Experiences';
-  public subTitle: string = 'Voici une synthèse des expériences professionnelles a travers les quelles j’ai pu développer mon expertise tant sur l’aspect définition des besoins que sur la mise en place des solution pour y répondre.';
-  public experiences = experiences
+  public subTitle: string = 'Voici une synthèse des expériences professionnelles à travers lesquelles j’ai pu développer mon expertise tant sur l’aspect définition des besoins que sur la mise en place de solutions pour y répondre.';
+  public experiences = experiences;
 
   public experienceClick(index: number): void {
-    if (!this.experiences[index].style.isOpen) {
-      this.experiences.forEach(experience => experience.style.isOpen = false);
+    if (!this.experiences[index].props.style.isOpen) {
+      this.experiences.forEach(experience => experience.props.style.isOpen = false);
 
         this.animationBlocked = true;
         this.imgRightStage = 'displayed';
@@ -203,7 +204,7 @@ export class ExperiencesComponent {
         this.imgLeftStage = 'hidden';
       }, 300);
     }
-    this.experiences[index].style.isOpen = !this.experiences[index].style.isOpen;
+    this.experiences[index].props.style.isOpen = !this.experiences[index].props.style.isOpen;
 
 
     // TODO: inverser les images a la fin de l'annimation
@@ -214,14 +215,16 @@ export class ExperiencesComponent {
   }
 
   public experienceHover(index: number): void {
-    if (!this.experiences[index].style.isOpen && !this.animationBlocked) {
-      this.imgRight = this.experiences[index].style.img;
+    if (!this.experiences[index].props.style.isOpen && !this.animationBlocked) {
+      this.imgRight = this.experiences[index].props.style.img;
     }
     this.ongletBack!.get(index)!.nativeElement.classList.add('hoverback');
+    this.crossMore!.get(index)!.nativeElement.classList.add('hoverMore');
   }
 
   public experienceLeav (index: number): void {
     this.ongletBack!.get(index)!.nativeElement.classList.remove('hoverback');
+    this.crossMore!.get(index)!.nativeElement.classList.remove('hoverMore');
   }
 
   public handleRightImageLoad(img: string) {
