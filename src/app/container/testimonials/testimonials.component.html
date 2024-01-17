@@ -9,17 +9,19 @@
       <div class="comments">
         <div *ngFor="let comment of comments" class="comment">
           <div class="commentHeader">
-            <div class="name_date_note">
-              <div class="name_date">
-                <div class="firstName">{{comment.first_name}}</div>
-                <div class="lastName">{{comment.last_name}}</div>
-                <div class="date">{{comment.createdAt | date:"MMM dd"}}</div>
+            <div class="name_role_note">
+              <div class="name_role">
+                <div>{{comment.first_name}}</div>
+                <div>{{comment.last_name}}</div>
               </div>
               <div class="note">
                 <div *ngFor="let note of getNoteElementsClasses(comment.note)" class={{note}}></div>
               </div>
             </div>
-            <div class="company"><p>{{comment.company_name}}</p></div>
+            <div class="company_date">
+              <div class="company"><p>{{comment.company_name}}</p></div>
+              <div class="date">{{comment.createdAt | date:"MMM dd"}}</div>
+            </div>
           </div>
           <div class="commentContent">
             <p>{{comment.content}}</p>

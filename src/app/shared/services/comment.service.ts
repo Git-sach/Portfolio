@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { Comment } from 'src/app/shared/interfaces/comment.interface'
 
 @Injectable({
@@ -10,7 +10,7 @@ export class CommentService {
 
   public comments$: BehaviorSubject<Comment[] | null> = new BehaviorSubject<Comment[] | null>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public fetchComments(): Observable<Comment[] | []> {
     return this.http.get<Comment[] | []>('https://adriencheynet.fr/api/messages').pipe(

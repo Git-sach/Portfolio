@@ -20,7 +20,7 @@
   background: transparent;
   border: rgba(0, 0, 0, 0.15) 1px solid;
   width: 340px;
-  height: 190px;
+  height: 220px;
   border-radius: 0.25rem;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
   padding: 15px;
@@ -36,36 +36,43 @@
   margin-bottom: 15px;
 }
 
-.comments .comment .commentHeader .name_date_note{
+.comments .comment .commentHeader .name_role_note{
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
-.comments .comment .commentHeader .name_date_note .name_date{
+.comments .comment .commentHeader .name_role_note .name_role{
   display: flex;
   font-size: 18px;
   gap: 3px;
-  align-items: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
   margin-top: 0;
 }
-.comments .comment .commentHeader .name_date_note .name_date .date{
+
+.comments .comment .commentHeader .company_date {
+  display: flex;
+  align-items: flex-end;
+}
+
+.comments .comment .commentHeader .company_date .company{
+  font-size: 12px;
+}
+
+.comments .comment .commentHeader .company_date .date{
   font-size: 12px;
   padding-left: 8px;
   opacity: .6;
 }
 
-.comments .comment .commentHeader .company{
-  font-size: 12px;
-}
-
-.comments .comment .commentHeader .name_date_note .note {
+.comments .comment .commentHeader .name_role_note .note {
   display: flex;
   gap: 6px;
 }
 
-.comments .comment .commentHeader .name_date_note .note .noteElement {
+.comments .comment .commentHeader .name_role_note .note .noteElement {
   width: 11px;
   height: 11px;
   border-radius: var(--bubleBorderRadius);
@@ -73,7 +80,7 @@
   box-shadow: var(--bubleShadow);
 }
 
-.comments .comment .commentHeader .name_date_note .note .checked {
+.comments .comment .commentHeader .name_role_note .note .checked {
   background: var(--bubleBackgroundColor);
 }
 

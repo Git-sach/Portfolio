@@ -51,7 +51,7 @@
 
   .separatorContainer .mask {
     height: 25px;
-    bottom: -1px;
+    bottom: -2px;
     background-color: var(--backgroundColor);
     width: 100%;
     position: absolute;

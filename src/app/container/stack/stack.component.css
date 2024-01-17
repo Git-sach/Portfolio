@@ -47,7 +47,7 @@
 @media only screen and (max-width: 767px) {
 
   .stackContainer {
-    padding: 35px 0px;
+    padding: 25px 0 0px 0;
     margin: 20px 0px 5px 0px;
 
   }
