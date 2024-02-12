@@ -45,7 +45,8 @@ import { StackComponent } from './container/stack/stack.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

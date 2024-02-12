@@ -1,5 +1,5 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-.cdk-global-scrollblock{
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.cdk-global-scrollblock {
   position: static !important;
   width: initial !important;
   overflow-y: inherit !important;
@@ -7,11 +7,17 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'KoHo', sans-serif;
+  font-family: "KoHo", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 body {
   margin: 0;
@@ -24,11 +30,11 @@ body {
 
   --mainColor1: #202429;
   --mainColor1b: rgba(35, 37, 40, 0.85);
-  --mainColor2: #FFBA18;
+  --mainColor2: #ffba18;
 
   /* texts */
-  --textTitleColor: #21201C;
-  --textParagraphColor: #63635E;
+  --textTitleColor: #21201c;
+  --textParagraphColor: #63635e;
 
   /* bubles */
   --bubleSize: 10px;
@@ -38,11 +44,14 @@ body {
   --bubleShadow: inset 2px 2px 1px rgba(0, 0, 0, 0.1);
 
   /* snackbar */
-  --successColor: #A8C69F;
+  --successColor: #a8c69f;
   --successColorDarck: #3e483b;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin: 0;
   color: var(--textTitleColor);
 }
@@ -86,7 +95,7 @@ p {
   font-size: 128px;
   font-weight: 600;
   color: var(--mainColor1);
-  opacity: .03;
+  opacity: 0.03;
   position: absolute;
   top: -60px;
   left: -5%;
@@ -149,8 +158,7 @@ button {
   border-radius: 4px;
 }
 
-@media only screen and (max-width: 1024px){
-
+@media only screen and (max-width: 1024px) {
   .titleSections {
     margin-bottom: 37px;
   }
@@ -166,8 +174,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 767px){
-
+@media only screen and (max-width: 767px) {
   .sectionContainer {
     padding: 0 3vh;
   }
@@ -191,7 +198,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 390px){
+@media only screen and (max-width: 390px) {
   .titleSections {
     margin-bottom: 15px;
   }

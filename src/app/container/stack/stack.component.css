@@ -3,11 +3,10 @@
 }
 .stackContainer {
   width: auto;
-  padding: 30px 40px 10px 40px;
+  padding: 45px 40px 10px 40px;
   margin: 20px 20px 10px 20px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .skill {
@@ -15,41 +14,39 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   /* border: 1px white solid; */
 }
 .skill svg {
-  opacity: .5;
-  transition: .3s;
+  opacity: 0.5;
+  transition: 0.3s;
   height: 60px;
 }
 .skill p {
   margin-top: 5px;
   color: rgba(255, 255, 255, 0);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .skill:hover {
   transform: translateY(-5px);
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.skill:hover svg{
-  opacity: .8;
-  transition: .2s;
+.skill:hover svg {
+  opacity: 0.8;
+  transition: 0.2s;
 }
 
-.skill:hover p{
-  color: rgba(255, 255, 255, .8);
-  transition: .2s;
+.skill:hover p {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.2s;
 }
 
 @media only screen and (max-width: 767px) {
-
   .stackContainer {
     padding: 25px 0 0px 0;
     margin: 20px 0px 5px 0px;
-
   }
 
   .skill svg {

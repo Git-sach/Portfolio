@@ -3,6 +3,7 @@
   padding-bottom: 100px;
   z-index: 1;
   position: relative;
+  overflow-x: inherit;
 }
 
 .subTitle {
@@ -12,19 +13,21 @@
 .experiencesContainer {
   display: flex;
   gap: 2%;
+  position: relative;
 }
 
 .image_container {
   width: 20%;
+  position: relative;
 }
 
 .images {
   position: sticky;
   top: 20vh;
-  height: auto;
+  left: 0px;
 }
 
-.images .filter_back_for_image_height img{
+.images .filter_back_for_image_height img {
   object-fit: contain;
   width: 17.1vw;
   opacity: 0;
@@ -41,13 +44,13 @@
   align-items: flex-start;
 }
 
-.images .filter_left img{
+.images .filter_left img {
   object-fit: contain;
   /* Largeur de image_container * largeur de la page sans paddings - la largeure de la slid_bar*/
   width: 17.1vw;
 }
 
-.images .filter_right{
+.images .filter_right {
   width: 100px;
   position: absolute;
   top: 0;
@@ -58,7 +61,7 @@
   align-items: flex-start;
 }
 
-.images .filter_right img{
+.images .filter_right img {
   object-fit: contain;
   /* Largeur de image_container * largeur de la page sans paddings - la largeure de la slid_bar*/
   width: 17.1vw;
@@ -76,9 +79,9 @@
   cursor: pointer;
 }
 
-.experience::before{
+.experience::before {
   margin: 20px 0;
-  content: '';
+  content: "";
   position: absolute;
   width: 0px;
   height: 100%;
@@ -86,9 +89,9 @@
   left: 6px;
 }
 
-.experience:last-child::before{
+.experience:last-child::before {
   margin: 20px 0;
-  content: '';
+  content: "";
   position: absolute;
   width: 0px;
   height: 70%;
@@ -107,13 +110,13 @@
   position: relative;
 }
 
-.experienceContent .experienceTitle{
+.experienceContent .experienceTitle {
   font-size: 24px;
   font-weight: 500;
   margin: 0 10px 5px 0;
 }
 .experienceContent .experienceTitle::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -20px;
   top: 50%;
@@ -126,11 +129,11 @@
   box-shadow: var(--bubleShadow);
 }
 
-.experienceContent img{
+.experienceContent img {
   width: 22px;
 }
 
-.experienceContent .companyName{
+.experienceContent .companyName {
   font-size: 14px;
 }
 
@@ -195,18 +198,17 @@ pre {
 .onglet .more svg {
   height: 12px;
   opacity: 0.6;
-  transition: .2s;
+  transition: 0.2s;
 }
-.onglet .more svg .vertical.open{
+.onglet .more svg .vertical.open {
   transform-origin: center;
   transform: rotate(90deg);
 }
 
-.onglet .more .hoverMore{
+.onglet .more .hoverMore {
   height: 19px;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 
 .onglet .front {
   width: 100%;
@@ -219,54 +221,50 @@ pre {
 }
 
 .onglet .back {
-  width:90%;
+  width: 90%;
   background-color: var(--backgroundColor);
   border-radius: 8px;
-	transform: skew(2.5deg, 0.5deg);
+  transform: skew(2.5deg, 0.5deg);
   filter: drop-shadow(1px 1px 3px rgba(79, 79, 79, 0.25));
   position: absolute;
   z-index: -2;
   bottom: 1px;
   right: 1px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.onglet .hoverback{
+.onglet .hoverback {
   filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.45));
-  transition: .2s;
+  transition: 0.2s;
 }
 
-@media only screen and (max-width: 1024px){
-
-
-  .experienceContent img{
+@media only screen and (max-width: 1024px) {
+  .experienceContent img {
     width: 20px;
   }
 
-  .experienceContent .companyName{
+  .experienceContent .companyName {
     font-size: 12px;
   }
-
 }
 
-@media only screen and (max-width: 768px){
-
+@media only screen and (max-width: 768px) {
   .subTitle {
-    max-width:100%;
+    max-width: 100%;
   }
 
   .image_container {
     display: none;
   }
   .experiences {
-    width: 100%
+    width: 100%;
   }
 
   .experience .experienceContent {
     padding: 0 15px 30px 0;
   }
 
-  .experienceContent .experienceTitle{
+  .experienceContent .experienceTitle {
     font-size: 21px;
   }
 
@@ -278,24 +276,22 @@ pre {
     max-width: 100%;
   }
 
-  .experienceContent img{
+  .experienceContent img {
     width: 18px;
   }
 
-  .experienceContent .companyName{
+  .experienceContent .companyName {
     font-size: 10px;
   }
 }
 
-
-@media only screen and (max-width: 390px){
-
+@media only screen and (max-width: 390px) {
   .sectionContainer {
     padding-top: 100px;
     padding-bottom: 50px;
   }
 
-  .experienceContent .experienceTitle{
+  .experienceContent .experienceTitle {
     font-size: 19px;
   }
 
