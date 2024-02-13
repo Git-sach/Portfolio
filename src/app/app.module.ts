@@ -21,6 +21,7 @@ import { TestimonialsFormComponent } from './container/testimonials/testimonials
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StackComponent } from './container/stack/stack.component';
+import { ScrollFadeInAnimationDirective } from './shared/directives/scroll-fade-in-animation.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StackComponent } from './container/stack/stack.component';
     SeparatorComponent,
     FooterComponent,
     TestimonialsFormComponent,
-    StackComponent
+    StackComponent,
+    ScrollFadeInAnimationDirective
   ],
   imports: [
     MatIconModule,

@@ -1,23 +1,35 @@
-<app-separator [asset]="{
-  colorTop: '#202429',
-  shadowOpacity: .7}">
+<app-separator
+  [asset]="{
+    colorTop: '#202429',
+    shadowOpacity: 0.7
+  }"
+>
 </app-separator>
 <div class="container">
   <app-about></app-about>
-  <app-separator [asset]="{
-    colorTop: '#F9FEFF',
-    shadowOpacity: 1}"></app-separator>
+  <app-separator
+    [asset]="{
+      colorTop: '#F9FEFF',
+      shadowOpacity: 1
+    }"
+  ></app-separator>
   <app-stack></app-stack>
-  <app-separator [asset]="{
-    colorTop: '#202429',
-    shadowOpacity: .7}"></app-separator>
+  <app-separator
+    [asset]="{
+      colorTop: '#202429',
+      shadowOpacity: 0.7
+    }"
+  ></app-separator>
   <app-portfolio></app-portfolio>
   <app-separator></app-separator>
   <app-experiences></app-experiences>
   <app-separator></app-separator>
   <app-testimonials [comments]="comments$ | async"></app-testimonials>
 </div>
-<app-separator [asset]="{
-  colorTop: '#F9FEFF',
-  shadowOpacity: 1}">
+<app-separator
+  [asset]="{
+    colorTop: '#F9FEFF',
+    shadowOpacity: 1
+  }"
+>
 </app-separator>

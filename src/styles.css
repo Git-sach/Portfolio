@@ -158,6 +158,17 @@ button {
   border-radius: 4px;
 }
 
+.initial_fade_in_animation {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade_in_animation {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+
 @media only screen and (max-width: 1024px) {
   .titleSections {
     margin-bottom: 37px;

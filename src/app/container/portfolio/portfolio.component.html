@@ -1,8 +1,8 @@
 <div class="sectionContainer">
   <div class="subSectionContainer">
     <div class="titleSections">
-      <h1 class="titleFront">{{title}}</h1>
-      <h1 appSlidingText class="titleBack">{{title}}</h1>
+      <h1 class="titleFront">{{ title }}</h1>
+      <h1 appSlidingText class="titleBack">{{ title }}</h1>
     </div>
     <!-- <h3>{{subTitle}}</h3> -->
     <div class="portflioContainer">
@@ -13,86 +13,161 @@
               <li
                 #liMenu
                 *ngFor="let project of projects; let index = index"
-                (click)="navClick(index)">{{project.title}}
+                (click)="navClick(index)"
+              >
+                {{ project.title }}
               </li>
             </ul>
           </nav>
           <div class="barNav"></div>
           <div class="selectedNav">
-            <div *ngFor="let project of projects"
+            <div
+              *ngFor="let project of projects"
               class="selectedPoint"
-              #point>
-            </div>
+              #point
+            ></div>
           </div>
         </div>
-        <div [ngClass]="projects[selectedProject].blured ? 'detail blured' : 'detail'"
-        [@content]="detailStateAnimation">
+        <div
+          [ngClass]="
+            projects[selectedProject].blured ? 'detail blured' : 'detail'
+          "
+          [@content]="detailStateAnimation"
+        >
           <div class="resum">
-            <h2>{{projects[selectedProject].title}}</h2>
-            <pre><p>{{projects[selectedProject].resum}}</p></pre>
+            <h2 appScrollFadeInAnimation>
+              {{ projects[selectedProject].title }}
+            </h2>
+            <pre><p appScrollFadeInAnimation>{{projects[selectedProject].resum}}</p></pre>
           </div>
-          <div *ngIf="isSmallScreen" [ngClass]="projects[selectedProject].blured ? 'images blured' : 'images'">
-            <img class="imgLeft"
-            appSlidingImg [ratioX]="-.01" [ratioY]="-.06"
-            src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
-            alt="Geoquizz"/>
-            <img class="imgBetween"
-            appSlidingImg [ratioX]="-.008" [ratioY]=".03"
-            src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
-            alt="Geoquizz"/>
-            <img class="imgRight"
-            appSlidingImg [ratioX]=".01" [ratioY]="-.08"
-            src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
-            alt="Geoquizz"/>
+          <div
+            *ngIf="isSmallScreen"
+            [ngClass]="
+              projects[selectedProject].blured ? 'images blured' : 'images'
+            "
+          >
+            <img
+              class="imgLeft"
+              appSlidingImg
+              [ratioX]="-0.01"
+              [ratioY]="-0.06"
+              src="../../../assets/portfolio/{{
+                projects[selectedProject].images.imgLeft
+              }}"
+              alt="Geoquizz"
+            />
+            <img
+              class="imgBetween"
+              appSlidingImg
+              [ratioX]="-0.008"
+              [ratioY]="0.03"
+              src="../../../assets/portfolio/{{
+                projects[selectedProject].images.imgBetween
+              }}"
+              alt="Geoquizz"
+            />
+            <img
+              class="imgRight"
+              appSlidingImg
+              [ratioX]="0.01"
+              [ratioY]="-0.08"
+              src="../../../assets/portfolio/{{
+                projects[selectedProject].images.imgRight
+              }}"
+              alt="Geoquizz"
+            />
           </div>
           <div class="specifications">
             <div class="keyWords">
-              <div *ngFor="let keyword of projects[selectedProject].keyWords"
-                class="keyWord">{{keyword}}
+              <div
+                *ngFor="let keyword of projects[selectedProject].keyWords"
+                class="keyWord"
+              >
+                {{ keyword }}
               </div>
             </div>
             <div class="sources">
-              <button *ngIf="projects[selectedProject].sources.website"
-              (click)="clickWebsite(projects[selectedProject].sources.website!)">WEBSITE</button>
-              <button *ngIf="projects[selectedProject].sources.codeSource"
-              (click)="clickWebsite(projects[selectedProject].sources.codeSource!)">SOURCE</button>
+              <button
+                *ngIf="projects[selectedProject].sources.website"
+                (click)="
+                  clickWebsite(projects[selectedProject].sources.website!)
+                "
+              >
+                WEBSITE
+              </button>
+              <button
+                *ngIf="projects[selectedProject].sources.codeSource"
+                (click)="
+                  clickWebsite(projects[selectedProject].sources.codeSource!)
+                "
+              >
+                SOURCE
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div *ngIf="!isSmallScreen" [ngClass]="projects[selectedProject].blured ? 'images blured' : 'images'">
-        <img class="imgLeft"
-        (click)="clickWebsite(projects[selectedProject].sources.website!)"
-        appSlidingImg [ratioX]="-.01" [ratioY]="-.08"
-        src="../../../assets/portfolio/{{projects[selectedProject].images.imgLeft}}"
-        alt="Geoquizz"/>
-        <img class="imgBetween"
-        (click)="clickWebsite(projects[selectedProject].sources.website!)"
-        appSlidingImg [ratioX]="-.001" [ratioY]=".03"
-        src="../../../assets/portfolio/{{projects[selectedProject].images.imgBetween}}"
-        alt="Geoquizz"/>
-        <img class="imgRight"
-        (click)="clickWebsite(projects[selectedProject].sources.website!)"
-        appSlidingImg [ratioX]=".01" [ratioY]="-.06"
-        src="../../../assets/portfolio/{{projects[selectedProject].images.imgRight}}"
-        alt="Geoquizz"/>
+      <div
+        *ngIf="!isSmallScreen"
+        [ngClass]="
+          projects[selectedProject].blured ? 'images blured' : 'images'
+        "
+      >
+        <img
+          class="imgLeft"
+          (click)="clickWebsite(projects[selectedProject].sources.website!)"
+          appSlidingImg
+          [ratioX]="-0.01"
+          [ratioY]="-0.08"
+          src="../../../assets/portfolio/{{
+            projects[selectedProject].images.imgLeft
+          }}"
+          alt="Geoquizz"
+        />
+        <img
+          class="imgBetween"
+          (click)="clickWebsite(projects[selectedProject].sources.website!)"
+          appSlidingImg
+          [ratioX]="-0.001"
+          [ratioY]="0.03"
+          src="../../../assets/portfolio/{{
+            projects[selectedProject].images.imgBetween
+          }}"
+          alt="Geoquizz"
+        />
+        <img
+          class="imgRight"
+          (click)="clickWebsite(projects[selectedProject].sources.website!)"
+          appSlidingImg
+          [ratioX]="0.01"
+          [ratioY]="-0.06"
+          src="../../../assets/portfolio/{{
+            projects[selectedProject].images.imgRight
+          }}"
+          alt="Geoquizz"
+        />
       </div>
     </div>
   </div>
 
   <!-- Provisoir, pour preLoad les images -->
-  <div *ngFor="let project of projects" style="display: none;">
+  <div *ngFor="let project of projects" style="display: none">
     <img
-    (click)="clickWebsite(projects[selectedProject].sources.website!)"
-    src="../../../assets/portfolio/{{project.images.imgLeft}}"
-    alt="Geoquizz"/>
-    <img class="imgBetween"
-    (click)="clickWebsite(projects[selectedProject].sources.website!)"
-    src="../../../assets/portfolio/{{project.images.imgBetween}}"
-    alt="Geoquizz"/>
-    <img class="imgRight"
-    (click)="clickWebsite(projects[selectedProject].sources.website!)"
-    src="../../../assets/portfolio/{{project.images.imgRight}}"
-    alt="Geoquizz"/>
+      (click)="clickWebsite(projects[selectedProject].sources.website!)"
+      src="../../../assets/portfolio/{{ project.images.imgLeft }}"
+      alt="Geoquizz"
+    />
+    <img
+      class="imgBetween"
+      (click)="clickWebsite(projects[selectedProject].sources.website!)"
+      src="../../../assets/portfolio/{{ project.images.imgBetween }}"
+      alt="Geoquizz"
+    />
+    <img
+      class="imgRight"
+      (click)="clickWebsite(projects[selectedProject].sources.website!)"
+      src="../../../assets/portfolio/{{ project.images.imgRight }}"
+      alt="Geoquizz"
+    />
   </div>
 </div>
