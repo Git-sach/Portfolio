@@ -94,6 +94,24 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
 
   public projects: Project[] = [
     {
+      title: 'Departments',
+      resum: `Dashboard qui permet la visualisation des températures enregistrées pour les départements français. Cette application a été conçue dans le but de suivre de près les dernières avancées technologiques d'Angular. 
+      Elle s'appuie sur différentes API externes et internes, et gère plusieurs états pour fournir des informations en temps réel sur les températures dans les différents départements français.
+      Une attention particulière a été accordée à la conception d'une architecture garantissant des performances optimales et offrant de vastes possibilités d'évolution.`,
+      keyWords: ['Angular', 'TypeSript', 'NodeJs'],
+      sources: {
+        website: 'https://deptemperatures.adriencheynet.fr/geoquizz',
+        codeSource:
+          'https://github.com/Git-sach/departments-temperatures-front-end',
+      },
+      images: {
+        imgLeft: 'departmentsLeft.png',
+        imgBetween: 'departmentsCenter.png',
+        imgRight: 'departmentsRight.png',
+      },
+      blured: false,
+    },
+    {
       title: 'Geoquizz',
       resum: `Application web sous forme de jeu où le but est de trouver le nom des départements français le plus rapidement possible. Un système de score permet de perfectionner son temps et de réaliser des records de rapidité tout en apprenant les départements Français !
 
@@ -126,21 +144,6 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
         imgRight: 'portfolioImgRight.png',
       },
       blured: false,
-    },
-    {
-      title: 'Bientôt ...',
-      resum: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-      keyWords: ['Bientôt', 'Bientôt', 'Bientôt'],
-      sources: {},
-      images: {
-        imgLeft: 'soonImg.png',
-        imgBetween: 'soonImg.png',
-        imgRight: 'soonImg.png',
-      },
-      blured: true,
     },
   ];
 
