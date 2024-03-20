@@ -100,7 +100,7 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
       Une attention particulière a été accordée à la conception d'une architecture garantissant des performances optimales et offrant de vastes possibilités d'évolution.`,
       keyWords: ['Angular', 'TypeSript', 'NodeJs'],
       sources: {
-        website: 'https://deptemperatures.adriencheynet.fr/geoquizz',
+        website: 'https://deptemperatures.adriencheynet.fr',
         codeSource:
           'https://github.com/Git-sach/departments-temperatures-front-end',
       },
