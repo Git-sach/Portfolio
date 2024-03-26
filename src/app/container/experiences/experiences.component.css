@@ -218,12 +218,12 @@ pre {
   z-index: -1;
   bottom: -2px;
   right: -2px;
-  background-color: var(--backgroundColor);
+  background-color: var(--app_background);
 }
 
 .onglet .back {
   width: 90%;
-  background-color: var(--backgroundColor);
+  background-color: var(--app_background);
   border-radius: 8px;
   transform: skew(2.5deg, 0.5deg);
   filter: drop-shadow(1px 1px 3px rgba(79, 79, 79, 0.25));

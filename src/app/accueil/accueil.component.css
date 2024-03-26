@@ -13,11 +13,12 @@
   right: 0;
   transform: translate(50%, 0);
   width: 230vh;
-  background: radial-gradient(circle,
-  rgba(36, 36, 36, .38),
-  rgba(32, 36, 41, 1) 70%,
-  var(--mainColor1)
- );
+  background: radial-gradient(
+    circle,
+    rgba(36, 36, 36, 0.38),
+    rgba(32, 36, 41, 1) 70%,
+    var(--mainColor1)
+  );
   z-index: 8;
 }
 
@@ -132,7 +133,7 @@
 }
 
 .container .content p {
-  color: var(--backgroundColor);
+  color: var(--app_background);
 }
 
 .container .content img {
@@ -140,27 +141,25 @@
   margin-bottom: 50px;
 }
 
-.container .content .reseaux{
+.container .content .reseaux {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 60px;
 }
 
-.container .content .reseaux svg{
+.container .content .reseaux svg {
   width: 20px;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px){
-
+@media only screen and (max-width: 768px) {
   .container .content {
     width: 80%;
   }
 }
 
-@media only screen and (max-width: 390px){
-
+@media only screen and (max-width: 390px) {
   .container .content {
     width: 100%;
   }

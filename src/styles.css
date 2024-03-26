@@ -21,16 +21,19 @@ body {
 
 body {
   margin: 0;
-  background-color: var(--backgroundColor);
+  background-color: var(--app_background);
 }
 
 :root {
-  --backgroundColor: #fdfeff;
-  --backgroundColor2: #fafcff;
+  --app_background: #fafbfc;
 
   --mainColor1: #202429;
   --mainColor1b: rgba(35, 37, 40, 0.85);
   --mainColor2: #ffba18;
+
+  --grey_subtle_borders_separators: #d3d8df /* 6 */;
+  --grey_hovered_solid_backgrounds: #7b828c /* 10 */;
+  --grey_low_contrast_text: #5d636b /* 11 */;
 
   /* texts */
   --textTitleColor: #21201c;

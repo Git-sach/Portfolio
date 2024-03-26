@@ -1,0 +1,42 @@
+<div class="sectionContainer">
+  <div class="subSectionContainer">
+    <div class="titleSections">
+      <h1 class="titleFront">{{ title }}</h1>
+      <h1 appSlidingText class="titleBack">{{ title }}</h1>
+    </div>
+    <p class="subTitle">{{ subTitle }}</p>
+    <div class="postsContainer">
+      <div class="posts">
+        <div *ngFor="let post of posts" class="post">
+          <div class="left_side">
+            <img [src]="post.coverImagePath" />
+          </div>
+          <div class="right_side">
+            <div class="title_resum">
+              <h1 class="title">
+                {{ post.title }}
+              </h1>
+              <p class="resum">
+                {{ post.resum }}
+              </p>
+            </div>
+            <div class="keywords_date_readTime">
+              <div class="keywords">
+                <div *ngFor="let keyword of post.keywords" class="keyword">
+                  <p>{{ keyword }}</p>
+                </div>
+              </div>
+              <div class="date_readTime">
+                <p class="date">{{ post.date | date : "dd MMMM yyyy" }}</p>
+                <div class="readTime_container">
+                  <img src="assets/timer.svg" />
+                  <p>{{ post.readTime }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

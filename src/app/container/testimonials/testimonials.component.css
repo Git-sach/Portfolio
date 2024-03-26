@@ -18,7 +18,7 @@
 
 .comments .comment {
   background: transparent;
-  border: rgba(0, 0, 0, 0.15) 1px solid;
+  border: 1px solid var(--grey_subtle_borders_separators);
   width: 340px;
   height: 220px;
   border-radius: 0.25rem;
@@ -28,7 +28,7 @@
   flex-direction: column;
 }
 
-.comments .comment .commentHeader{
+.comments .comment .commentHeader {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -36,14 +36,14 @@
   margin-bottom: 15px;
 }
 
-.comments .comment .commentHeader .name_role_note{
+.comments .comment .commentHeader .name_role_note {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.comments .comment .commentHeader .name_role_note .name_role{
+.comments .comment .commentHeader .name_role_note .name_role {
   display: flex;
   font-size: 18px;
   gap: 3px;
@@ -57,14 +57,14 @@
   align-items: flex-end;
 }
 
-.comments .comment .commentHeader .company_date .company{
+.comments .comment .commentHeader .company_date .company {
   font-size: 12px;
 }
 
-.comments .comment .commentHeader .company_date .date{
+.comments .comment .commentHeader .company_date .date {
   font-size: 12px;
   padding-left: 8px;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .comments .comment .commentHeader .name_role_note .note {
@@ -84,13 +84,11 @@
   background: var(--bubleBackgroundColor);
 }
 
-.comments .comment .commentContent p{
+.comments .comment .commentContent p {
   font-size: 14px;
 }
 
-@media only screen and (max-width: 1200px){
-
-
+@media only screen and (max-width: 1200px) {
   .testimonialsContainer {
     align-items: flex-start;
   }
@@ -103,24 +101,21 @@
   .comments .comment:nth-child(2n) {
     margin-left: 10%;
   }
-
 }
 
-@media only screen and (max-width: 768px){
-
+@media only screen and (max-width: 768px) {
   .comments .comment:nth-child(2n) {
     margin-left: 0;
   }
 }
 
-@media only screen and (max-width: 390px){
-
+@media only screen and (max-width: 390px) {
   .sectionContainer {
     padding-top: 100px;
     padding-bottom: 50px;
   }
 
-  .comments .comment{
+  .comments .comment {
     width: 100%;
   }
 
