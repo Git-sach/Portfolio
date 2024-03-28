@@ -1,4 +1,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "app/shared/style/buttons.css";
+@import "app/shared/style/scrollbar.css";
+
 .cdk-global-scrollblock {
   position: static !important;
   width: initial !important;
@@ -14,30 +17,29 @@ html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 body {
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--app_background);
 }
 
 :root {
-  --app_background: #fafbfc;
+  --app_background: #fafbfc /* 1 */;
+  --subtle_background: #f7f8fa /* 2 */;
+  --subtle_background: #f7f8fa /* 2 */;
+  --solid_backgrounds: #202429 /* 9 */;
+  --solid_backgrounds_contrast: #ffffff /* 9bis */;
 
-  --mainColor1: #202429;
-  --mainColor1b: rgba(35, 37, 40, 0.85);
-  --mainColor2: #ffba18;
+  --mainColor2: #ffc53d;
 
+  --grey_ui_element_background: #edeff2 /* 3 */;
+  --grey_hover_ui_element_background: #e4e7eb /* 4 */;
   --grey_subtle_borders_separators: #d3d8df /* 6 */;
+  --grey_hovered_ui_element_border: #b3b9c2; /* 8 */
   --grey_hovered_solid_backgrounds: #7b828c /* 10 */;
   --grey_low_contrast_text: #5d636b /* 11 */;
-
-  /* texts */
-  --textTitleColor: #21201c;
-  --textParagraphColor: #63635e;
+  --grey_high_contrast_text: #1c2025 /* 12 */;
 
   /* bubles */
   --bubleSize: 10px;
@@ -56,7 +58,7 @@ h2,
 h3,
 p {
   margin: 0;
-  color: var(--textTitleColor);
+  color: var(--grey_high_contrast_text);
 }
 
 h1 {
@@ -72,11 +74,12 @@ h2 {
 p {
   font-size: 16px;
   font-weight: 300;
-  color: var(--textParagraphColor);
+  color: var(--grey_low_contrast_text);
 }
 
 .subTitle {
   margin-bottom: 40px;
+  font-size: 1.2rem;
 }
 
 .noScrollBack {
@@ -97,7 +100,7 @@ p {
 .titleSections .titleBack {
   font-size: 128px;
   font-weight: 600;
-  color: var(--mainColor1);
+  color: var(--solid_backgrounds);
   opacity: 0.03;
   position: absolute;
   top: -60px;
@@ -107,6 +110,7 @@ p {
 .sectionContainer {
   padding: 0 7vh;
   overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .subSectionContainer {
@@ -114,50 +118,12 @@ p {
   margin: auto;
 }
 
-::-webkit-scrollbar {
-  width: 1vh;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: var(--mainColor1b);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--mainColor1);
-}
-
-::selection {
-  background-color: var(--mainColor2);
-  color: #f1f1f1;
-}
-
-button {
-  padding: 0 40px;
-  height: 40px;
-  background-color: var(--mainColor1);
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.mat-mdc-snack-bar-container {
-  &.success-information {
-    --mdc-snackbar-container-color: var(--successColor);
-    --mdc-snackbar-supporting-text-color: var(--successColorDarck);
-  }
-}
-
 .keyWord {
   font-size: 11px;
   background-color: transparent;
-  border: solid 1px var(--textParagraphColor);
+  border: solid 1px var(--grey_subtle_borders_separators);
   padding: 5px 15px;
-  color: var(--textParagraphColor);
+  color: var(--grey_low_contrast_text);
   border-radius: 4px;
 }
 
@@ -184,7 +150,6 @@ button {
   .titleSections .titleBack {
     font-size: 100px;
     top: -45px;
-    /* line-height: 100px; */
   }
 }
 

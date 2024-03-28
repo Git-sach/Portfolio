@@ -27,7 +27,7 @@ export class SeparatorComponent implements AfterViewInit {
     this.mask!.nativeElement.style.backgroundColor = this.asset.colorTop;
     this.triangle!.nativeElement.style.borderTop = `${this.asset.colorTop} solid 10px`;
     this.triangle!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
-    this.leftSeparator!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
-    this.rightSeparator!.nativeElement.style.filter = `drop-shadow(0px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
+    this.leftSeparator!.nativeElement.style.filter = `drop-shadow(10px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
+    this.rightSeparator!.nativeElement.style.filter = `drop-shadow(-10px 1px 5px rgba(0, 0, 0, ${this.asset.shadowOpacity}))`;
   }
 }

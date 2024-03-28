@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+  width: 1vh;
+}
+::-webkit-scrollbar-track {
+  background: var(--app_background);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--solid_backgrounds);
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey_high_contrast_text);
+}
+
+::selection {
+  background-color: var(--mainColor2);
+  color: var(--solid_backgrounds_contrast);
+}

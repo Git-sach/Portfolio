@@ -87,22 +87,66 @@
               </div>
             </div>
             <div class="sources">
-              <button
+              <div
+                class="button outline"
                 *ngIf="projects[selectedProject].sources.website"
                 (click)="
                   clickWebsite(projects[selectedProject].sources.website!)
                 "
               >
-                WEBSITE
-              </button>
-              <button
+                Website
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 13C10.4295 13.5741 10.9774 14.0491 11.6066 14.3929C12.2357 14.7367 12.9315 14.9411 13.6467 14.9923C14.3618 15.0435 15.0796 14.9403 15.7513 14.6897C16.4231 14.4392 17.0331 14.047 17.54 13.54L20.54 10.54C21.4508 9.59695 21.9548 8.33394 21.9434 7.02296C21.932 5.71198 21.4061 4.45791 20.4791 3.53087C19.5521 2.60383 18.298 2.07799 16.987 2.0666C15.676 2.0552 14.413 2.55918 13.47 3.46997L11.75 5.17997"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14 11.0002C13.5705 10.4261 13.0226 9.95104 12.3934 9.60729C11.7642 9.26353 11.0685 9.05911 10.3533 9.00789C9.63819 8.95667 8.9204 9.05986 8.24864 9.31044C7.57688 9.56103 6.96687 9.95316 6.45999 10.4602L3.45999 13.4602C2.5492 14.4032 2.04522 15.6662 2.05662 16.9772C2.06801 18.2882 2.59385 19.5423 3.52089 20.4693C4.44793 21.3964 5.702 21.9222 7.01298 21.9336C8.32396 21.945 9.58697 21.441 10.53 20.5302L12.24 18.8202"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div
+                class="button solid"
                 *ngIf="projects[selectedProject].sources.codeSource"
                 (click)="
                   clickWebsite(projects[selectedProject].sources.codeSource!)
                 "
               >
-                SOURCE
-              </button>
+                Source
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 22V18C15.1391 16.7473 14.7799 15.4901 14 14.5C17 14.5 20 12.5 20 9C20.08 7.75 19.73 6.52 19 5.5C19.28 4.35 19.28 3.15 19 2C19 2 18 2 16 3.5C13.36 3 10.64 3 8.00001 3.5C6.00001 2 5.00001 2 5.00001 2C4.70001 3.15 4.70001 4.35 5.00001 5.5C4.27188 6.51588 3.91848 7.75279 4.00001 9C4.00001 12.5 7.00001 14.5 10 14.5C9.61001 14.99 9.32001 15.55 9.15001 16.15C8.98001 16.75 8.93001 17.38 9.00001 18V22"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 18C4.49 20 4 16 2 16"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

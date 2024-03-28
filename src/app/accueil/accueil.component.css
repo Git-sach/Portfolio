@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--mainColor1);
+  background-color: var(--solid_backgrounds);
   height: 100vh;
   position: relative;
   overflow: hidden;

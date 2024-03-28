@@ -1,17 +1,18 @@
 .sectionContainer {
-  padding-top: 150px;
+  padding-top: 120px;
   padding-bottom: 100px;
 }
 
 .postsContainer {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .posts {
   display: flex;
-  gap: 50px;
+  gap: 10px;
   width: 100%;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -20,20 +21,31 @@
   border: 1px solid var(--grey_subtle_borders_separators);
   transition: 0.2s;
   border-radius: 5px;
+  height: 250px;
   display: flex;
+  width: 49%;
 }
 
 .posts .post .left_side {
-  width: calc(480px / 2);
+  width: 30%;
+  overflow: hidden;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .posts .post .left_side img {
-  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  transition: 0.3s;
+  filter: grayscale(20%);
 }
 
 .posts .post .right_side {
-  width: calc(480px / 2);
+  width: 70%;
   padding: 10px 15px;
   display: flex;
   flex-direction: column;
@@ -42,12 +54,13 @@
 
 .posts .post .right_side .title_resum .title {
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .posts .post .right_side .title_resum .resum {
-  font-size: 0.8rem;
+  margin-top: 10px;
+  /* font-size: 0.8rem; */
 }
 
 .posts .post .right_side .keywords_date_readTime p {
@@ -60,14 +73,6 @@
   gap: 5px;
   flex-wrap: wrap;
   margin-bottom: 10px;
-}
-
-.posts .post .right_side .keywords_date_readTime .keywords .keyword {
-  color: var(--grey_low_contrast_text);
-  border: 1px solid var(--grey_subtle_borders_separators);
-  border-radius: 5px;
-  padding: 2px 10px;
-  white-space: nowrap;
 }
 
 .posts .post .right_side .keywords_date_readTime .date_readTime {
@@ -85,5 +90,30 @@
 }
 
 .posts .post:hover {
-  border: 1px solid var(--grey_hovered_solid_backgrounds);
+  border: 1px solid var(--grey_hovered_ui_element_border);
+  background-color: var(--subtle_background);
+}
+
+.posts .post:hover .left_side img {
+  filter: grayscale(0%);
+}
+
+.button {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .posts .post {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .posts .post .left_side {
+    display: none;
+  }
+  .posts .post .right_side {
+    width: 100%;
+  }
 }

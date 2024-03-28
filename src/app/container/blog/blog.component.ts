@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Post } from 'src/app/shared/interfaces/post.interface';
+import { BlogService } from 'src/app/shared/services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -6,29 +9,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent {
+  public blogService = inject(BlogService);
+
   public title: string = 'Blog';
+  public posts$: Observable<Post[]> = this.blogService.getPosts();
+
   public subTitle: string =
-    "Ici, nous plongeons dans l'univers captivant du développement web et démystifions les concepts essentiels de programmation dans le but de perfectionner notre art du code.";
-  public posts = [
-    {
-      id: 1,
-      title: 'Injection de dépendance Angular',
-      resum: 'resum',
-      content: 'content',
-      coverImagePath: 'assets/change_detection.png',
-      keywords: ['Angular', 'truc'],
-      readTime: 30,
-      date: new Date(),
-    },
-    {
-      id: 1,
-      title: '1er titre',
-      resum: 'resum',
-      content: 'content',
-      coverImagePath: 'assets/change_detection.png',
-      keywords: ['Angular', 'truc'],
-      readTime: 30,
-      date: new Date(),
-    },
-  ];
+    "Plongez dans l'univers du développement web avec Angular à travers les derniers articles de mon blog ! En tant que développeur passionné et adepte d'Angular, j'ai pris plaisir à partager mes connaissances et expériences pour vous guider à travers les rouages de ce puissant framework JavaScript.";
+
+  onClickPost() {
+    window.location.href = 'https://blog.adriencheynet.fr/post/4';
+  }
+
+  onClickAllPosts() {
+    window.location.href = 'https://blog.adriencheynet.fr/home';
+  }
 }

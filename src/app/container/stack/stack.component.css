@@ -1,5 +1,6 @@
 .sectionContainer {
-  background-color: var(--mainColor1);
+  background-color: var(--solid_backgrounds);
+  overflow-x: hidden;
 }
 .stackContainer {
   width: auto;
@@ -22,6 +23,13 @@
   transition: 0.3s;
   height: 60px;
 }
+
+.skill:nth-child(3) svg {
+  opacity: 0.5;
+  transition: 0.3s;
+  width: 80px;
+}
+
 .skill p {
   margin-top: 5px;
   color: rgba(255, 255, 255, 0);
@@ -52,5 +60,9 @@
   .skill svg {
     height: 30px;
     width: 30px;
+  }
+
+  .skill:nth-child(3) svg {
+    width: 40px;
   }
 }

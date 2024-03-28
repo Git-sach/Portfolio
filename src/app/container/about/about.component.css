@@ -4,12 +4,9 @@
   background-color: var(--backgroundColor2);
 }
 
-.subSectionContainer {
-  position: relative;
-}
-
 .resumContainer {
   max-width: 650px;
+  position: relative;
 }
 
 .resumContainer p {
@@ -28,9 +25,10 @@ pre {
   height: 350px;
   width: 350px;
   border-radius: 30rem;
-  border: 0.3px solid rgba(0, 0, 0, 0.30);
-  background: #EAA92C;
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.10) inset, 5px 5px 5px 0px rgba(0, 0, 0, 0.10);
+  border: 0.3px solid rgba(0, 0, 0, 0.3);
+  background: #eaa92c;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.1) inset,
+    5px 5px 5px 0px rgba(0, 0, 0, 0.1);
 }
 .buble2 {
   position: absolute;
@@ -39,9 +37,10 @@ pre {
   height: 80px;
   width: 80px;
   border-radius: 30rem;
-  border: 0.3px solid rgba(0, 0, 0, 0.30);
-  background: #EAA92C;
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.10) inset, 5px 5px 5px 0px rgba(0, 0, 0, 0.10);
+  border: 0.3px solid rgba(0, 0, 0, 0.3);
+  background: #eaa92c;
+  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.1) inset,
+    5px 5px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 767px) {
