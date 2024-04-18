@@ -12,6 +12,6 @@ export class BlogService {
   readonly baseUrl = 'https://blogapi.adriencheynet.fr';
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/posts`);
+    return this.http.get<any[]>(`${this.baseUrl}/public/posts`);
   }
 }
